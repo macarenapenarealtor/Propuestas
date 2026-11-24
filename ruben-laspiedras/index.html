@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Eden Suites · Propuesta para el Sr. Rubén Laspiedras</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Su plan de pago en Eden Suites, El Cortecito, Punta Cana. Macarena Peña, RE/MAX Ocean.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Eden Suites · Propuesta para el Sr. Rubén Laspiedras">
+<meta property="og:description" content="Su plan de pago en Eden Suites, El Cortecito, a 5 minutos caminando de la playa. Macarena Peña, RE/MAX Ocean.">
+<meta property="og:image" content="https://macarenapena.com/ruben-laspiedras/img/piscina.jpg">
+<meta property="og:url" content="https://macarenapena.com/ruben-laspiedras/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* VOICE everyday-premium: a personal property proposal, calm and clear, readable in one minute on a phone
+   IDEA the Eden Suites brochure turned into a pocket booklet: deep forest green, olive leaf, warm wood
+   PICTURE a payment calendar, one cell per month from the reservation to the keys, recoloured live by the choices
+   COLOUR cream ground, forest #1c2d13 fields, olive #6f8243 cuotas, wood #c39a5a reserve; night green-black
+   TYPE EB Garamond (brochure titles) + Montserrat for text and figures
+   LAYOUT photo band with title panel; then controls + result left, calendar right; phone: title, photo, controls, result, calendar */
+:root{color-scheme:light dark;--bg:light-dark(#fbf8f2,#0e150b);--ink:light-dark(#1f2a17,#ebeee4);--soft:light-dark(#5c6552,#aab49e);--line:light-dark(#e3dccd,#253020);--mist:light-dark(#ece6d9,#1a2414);--deep:#1c2d13;--deep2:light-dark(#1c2d13,#33502a);--leaf:light-dark(#6f8243,#9fb06b);--gold:#c39a5a;--card:light-dark(#f3eee3,#131c0f)}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font:16px/1.55 Montserrat,system-ui,sans-serif;overflow-x:clip}
+img{max-width:100%;display:block}
+h1,h2{font-family:"EB Garamond",Georgia,serif;font-weight:400;line-height:1.05;letter-spacing:-.005em;text-wrap:balance;margin:0}
+h2{font-size:clamp(32px,4.6vw,46px)}
+.band{padding-block:clamp(28px,4vw,64px);padding-left:max(5vw,16px);padding-right:max(5vw,16px)}
+.wrap{max-width:1240px;margin:0 auto}
+.lead{color:var(--soft);margin:10px 0 0;max-width:62ch}
+.num{font-variant-numeric:tabular-nums;white-space:nowrap}
+/* hero */
+.hero{position:relative;background:var(--deep)}
+.hero img{width:100%;height:clamp(260px,52vw,520px);object-fit:cover}
+.panel{background:var(--deep);color:#f2efe6;padding:22px 24px 24px;max-width:580px}
+@media(min-width:760px){.panel{position:absolute;left:max(5vw,16px);bottom:-1px;border-radius:2px 2px 0 0}}
+.panel .kick{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:#c9d0b8;margin:0 0 6px}
+.panel h1{font-size:clamp(40px,5.4vw,58px)}
+.panel p{margin:8px 0 0;color:#d5dac8}
+.who{position:absolute;top:14px;right:max(5vw,16px);background:rgba(20,32,14,.82);color:#f2efe6;padding:8px 14px;border-radius:40px;font-size:13px;font-weight:600}
+/* tool */
+.tool{display:grid;gap:clamp(24px,4vw,56px);grid-template-columns:minmax(0,1fr);margin-top:24px}
+@media(min-width:900px){.tool{grid-template-columns:minmax(0,5fr) minmax(0,6fr);align-items:start}.cal{position:sticky;top:16px}}
+fieldset{border:0;padding:0;margin:0 0 18px}
+legend{font-weight:600;font-size:14px;margin-bottom:8px}
+.seg{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.seg input{position:absolute;opacity:0;pointer-events:none}
+.seg label{display:block;min-height:56px;padding:10px 14px;border:1.5px solid var(--line);border-radius:10px;cursor:pointer;background:var(--card);transition:border-color .15s,background .15s}
+.seg label b{display:block;font-weight:600;line-height:1.3}
+.seg label span{display:block;font-size:14px;color:var(--soft);margin-top:2px}
+.seg input:checked+label{border-color:var(--deep2);background:color-mix(in srgb,var(--leaf) 16%,var(--card));box-shadow:inset 0 0 0 1px var(--deep2)}
+.seg input:focus-visible+label{outline:3px solid var(--gold);outline-offset:2px}
+.seg label:hover{border-color:var(--soft)}
+.deliv{font-size:14px;margin:-4px 0 14px;color:var(--soft)}
+.deliv b{color:var(--ink)}
+.result{background:var(--deep);color:#f2efe6;border-radius:12px;padding:20px 22px;margin-top:6px}
+.result small{display:block;color:#c9d0b8;font-size:14px}
+.big{font-size:clamp(44px,8vw,64px);font-weight:700;line-height:1.05;letter-spacing:-.02em;margin:4px 0}
+.big em{font-style:normal;font-size:.4em;font-weight:500;color:#c9d0b8}
+.rows{list-style:none;margin:20px 0 0;padding:0;border-top:1px solid var(--line)}
+.rows li{display:grid;grid-template-columns:14px minmax(0,1fr) auto;gap:4px 12px;align-items:baseline;padding:12px 0;border-bottom:1px solid var(--line)}
+.rows i{width:12px;height:12px;border-radius:3px;align-self:center}
+.rows b{font-weight:600}
+.rows .when{grid-column:2;font-size:14px;color:var(--soft)}
+.rows .amt{grid-row:1;grid-column:3;text-align:right;font-weight:600}
+.rows .pct{grid-column:3;text-align:right;font-size:14px;color:var(--soft)}
+.note{font-size:14px;color:var(--soft);margin:12px 0 0}
+/* calendar */
+.cal{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px clamp(12px,2.4vw,24px)}
+.cal h3{margin:0 0 4px;font-size:17px;font-weight:600}
+.cal p{margin:0 0 14px;font-size:14px;color:var(--soft)}
+.grid{display:grid;grid-template-columns:44px repeat(12,minmax(0,1fr));gap:5px;align-items:center}
+.grid .m{font-size:13px;color:var(--soft);text-align:center}
+.grid .y{font-size:13px;font-weight:600;color:var(--soft)}
+.c{aspect-ratio:1;border-radius:5px;background:var(--mist);transition:background .35s}
+.c.res{background:var(--gold)}.c.ini{background:var(--deep2)}.c.cuo{background:var(--leaf)}
+.c.key{background:var(--bg);box-shadow:inset 0 0 0 3px var(--deep2);position:relative}
+.c.key::after{content:"";position:absolute;inset:30%;border-radius:50%;background:var(--gold)}
+.c.off{background:transparent}
+.legend{display:flex;flex-wrap:wrap;gap:8px 16px;margin-top:14px;font-size:14px}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.legend i{width:12px;height:12px;border-radius:3px;display:inline-block}
+.compare{margin-top:16px;font-size:14px;padding-top:12px;border-top:1px solid var(--line)}
+/* apartment */
+.alt{background:var(--card)}
+.apt{display:grid;gap:clamp(20px,3vw,40px);grid-template-columns:minmax(0,1fr);margin-top:22px}
+@media(min-width:900px){.apt{grid-template-columns:minmax(0,7fr) minmax(0,5fr)}}
+.apt figure{margin:0}
+.apt figure img{border-radius:10px;width:100%}
+.apt figcaption{font-size:14px;color:var(--soft);margin-top:8px}
+.plano{background:#f7efe8;border-radius:10px;padding:12px}
+.plano img{max-height:min(72vh,560px);width:auto;margin:0 auto}
+.spaces{columns:2;column-gap:20px;padding:0;margin:16px 0 0;list-style:none}
+.spaces li{break-inside:avoid;padding:6px 0;border-bottom:1px solid var(--line);font-size:15px}
+.inc{margin-top:16px;padding:12px 14px;border-radius:10px;background:color-mix(in srgb,var(--leaf) 16%,var(--bg));font-size:15px}
+/* area */
+.green{background:var(--deep);color:#eef0e6}
+.green .lead{color:#c6cdb6}
+.area{display:grid;gap:clamp(20px,3vw,40px);grid-template-columns:minmax(0,1fr);margin-top:22px}
+@media(min-width:900px){.area{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
+.dist{display:grid;grid-template-columns:repeat(auto-fit,minmax(9.5em,1fr));gap:10px;align-content:start}
+.dist div{border:1px solid rgba(255,255,255,.18);border-radius:10px;padding:12px 14px}
+.dist div:first-child{background:rgba(195,154,90,.18);border-color:rgba(195,154,90,.55)}
+.dist b{display:block;font-size:24px;font-weight:700;color:#fff}
+.dist span{font-size:14px;color:#c6cdb6}
+.amen{margin:0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(13em,1fr));gap:4px 20px}
+.amen li{padding:8px 0;border-bottom:1px solid rgba(255,255,255,.16)}
+.walk{margin-top:16px;padding:14px 16px;border-radius:10px;background:rgba(255,255,255,.08)}
+.gal{margin-top:clamp(24px,3vw,40px)}
+.strip{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding-bottom:4px}
+.strip::-webkit-scrollbar{display:none}
+.strip figure{flex:0 0 min(86%,560px);scroll-snap-align:start;margin:0}
+.strip img{border-radius:10px;width:100%;aspect-ratio:16/9;object-fit:cover}
+.strip figcaption{font-size:14px;color:#c6cdb6;margin-top:6px}
+.nav{display:flex;gap:8px;justify-content:flex-end;margin-top:10px}
+.nav button{width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,.35);background:transparent;color:#fff;font-size:18px;cursor:pointer}
+.nav button:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+/* cta */
+.cta{display:grid;gap:18px;grid-template-columns:minmax(0,1fr);align-items:center}
+@media(min-width:900px){.cta{grid-template-columns:minmax(0,3fr) minmax(0,2fr)}}
+.btn{display:flex;align-items:center;justify-content:center;gap:10px;min-height:56px;padding:14px 22px;border-radius:12px;background:var(--deep2);color:#fff;font-weight:600;text-decoration:none;text-align:center}
+.btn:hover{filter:brightness(1.15)}
+.btn:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.contact{font-size:15px;color:var(--soft);margin-top:10px}
+footer{border-top:1px solid var(--line);font-size:13px;color:var(--soft)}
+footer p{margin:0 0 6px;max-width:90ch}
+@media(max-width:600px){.spaces{columns:1}.grid{grid-template-columns:36px repeat(12,minmax(0,1fr));gap:3px}}
+@media(prefers-reduced-motion:reduce){.c{transition:none}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <img src="img/piscina.jpg" alt="Piscina y gazebo de Eden Suites">
+  <span class="who">Macarena Peña · RE/MAX Ocean</span>
+  <div class="panel">
+    <p class="kick">El Cortecito · Bávaro · Punta Cana</p>
+    <h1>Eden Suites</h1>
+    <p>A 5 minutos caminando de la playa. Propuesta para el Sr. Rubén Laspiedras.</p>
+  </div>
+</header>
+
+<section class="band">
+  <div class="wrap">
+    <h2>Su plan de pago</h2>
+    <p class="lead">Elija el apartamento y la vista: el plan se ajusta al instante. Está calculado con la reserva en diciembre y el inicial en enero.</p>
+    <div class="tool">
+      <div>
+        <fieldset>
+          <legend>Apartamento</legend>
+          <div class="seg" id="units"></div>
+        </fieldset>
+        <fieldset>
+          <legend>Vista</legend>
+          <div class="seg" id="views"></div>
+        </fieldset>
+        <p class="deliv">Entrega: <b>octubre 2028</b></p>
+        <div class="result" aria-live="polite">
+          <small>Cuota mensual durante la construcción</small>
+          <div class="big num" id="cuota"></div>
+          <small id="cuotaTxt"></small>
+        </div>
+        <ul class="rows" id="rows"></ul>
+        <p class="note">El monto contra entrega se puede cubrir con financiamiento bancario. Yo lo acompaño en ese proceso y en todo el de compra.</p>
+      </div>
+      <div class="cal">
+        <h3>Sus pagos, mes a mes</h3>
+        <p id="calTxt"></p>
+        <div class="grid" id="grid"></div>
+        <div class="legend">
+          <span><i style="background:var(--gold)"></i>Reserva</span>
+          <span><i style="background:var(--deep2)"></i>Inicial</span>
+          <span><i style="background:var(--leaf)"></i>Cuota</span>
+          <span><i style="background:var(--bg);box-shadow:inset 0 0 0 3px var(--deep2)"></i>Entrega</span>
+        </div>
+        <div class="compare" id="compare"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band alt">
+  <div class="wrap">
+    <h2>El apartamento</h2>
+    <p class="lead" id="aptLead"></p>
+    <div class="apt">
+      <figure>
+        <img src="img/interior.jpg" alt="Sala, comedor y cocina de un apartamento de Eden Suites">
+        <figcaption>Sala, comedor y cocina. Imagen ilustrativa.</figcaption>
+      </figure>
+      <div>
+        <div class="plano"><img id="plano" src="img/plano-2h-balcon.jpg" alt=""></div>
+        <ul class="spaces" id="spaces"></ul>
+        <div class="inc">Cocina con tope y backsplash en <b>verde ubatuba</b>, baños en porcelanato y el dormitorio principal con salida directa al balcón o al patio.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band green">
+  <div class="wrap">
+    <h2>El Cortecito, a 5 minutos de la playa</h2>
+    <p class="lead">Una de las zonas más rentables de Punta Cana para alquilar: quien se hospeda aquí llega caminando a la playa, a los restaurantes y a los bares. Y está a 7 minutos de Downtown Punta Cana.</p>
+    <div class="area">
+      <div>
+        <ul class="amen">
+          <li>2 piscinas con asoleaderos</li><li>Gazebo con doble lounge</li><li>Bar y área de BBQ</li><li>Gimnasio</li><li>Lobby con recepción</li><li>Gran área verde central</li><li>Ascensor en cada bloque</li><li>Área de estar en azotea (bloque de 2 hab)</li>
+        </ul>
+        <div class="walk">Los edificios rodean un núcleo verde con las piscinas y el gazebo, por eso las unidades orientadas a la piscina miran hacia el corazón del proyecto.</div>
+      </div>
+      <div class="dist" id="dist"></div>
+    </div>
+    <div class="gal">
+      <div class="strip" id="strip">
+        <figure><img src="img/fachada.jpg" alt="Edificios de Eden Suites entre palmeras"><figcaption>Fachada</figcaption></figure>
+        <figure><img src="img/gazebo.jpg" alt="Gazebo y piscina vistos desde arriba"><figcaption>Gazebo y piscinas</figcaption></figure>
+        <figure><img src="img/lobby.jpg" alt="Lobby con recepción"><figcaption>Lobby</figcaption></figure>
+        <figure><img src="img/gimnasio.jpg" alt="Gimnasio con vista al área verde"><figcaption>Gimnasio</figcaption></figure>
+      </div>
+      <div class="nav"><button type="button" id="prev" aria-label="Foto anterior">&#8592;</button><button type="button" id="next" aria-label="Foto siguiente">&#8594;</button></div>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap cta">
+    <div>
+      <h2>Lo vemos juntos en un Zoom</h2>
+      <p class="lead">Le presento una opción a la vez. En 20 minutos de Zoom revisamos esta con calma, junto con su hijo si lo desea, y resolvemos todas sus dudas.</p>
+    </div>
+    <div>
+      <a class="btn" id="wa" href="https://wa.me/18295126019">Coordinar el Zoom por WhatsApp</a>
+      <p class="contact">Macarena Peña · Asesora inmobiliaria, RE/MAX Ocean<br>WhatsApp <span class="num">+1 829 512 6019</span> · macarenapena@remaxocean.net</p>
+    </div>
+  </div>
+</section>
+
+<footer class="band">
+  <div class="wrap">
+    <p>Montos aproximados en dólares, calculados con el plan del desarrollador: reserva de USD 2,000, 15% a la firma del contrato a los 30 días de la reserva (incluye la reserva), 35% durante la construcción y 50% contra entrega. Entrega estimada en octubre 2028. Sujetos a confirmación de precio, disponibilidad y fechas por el desarrollador.</p>
+    <p>La reserva no es reembolsable. Los cargos bancarios y de transferencia corren por cuenta del comprador, y el recibo se emite por el monto que llegue a la cuenta de la constructora. Imágenes y planos ilustrativos.</p>
+  </div>
+</footer>
+
+<script>
+{
+const UNITS=[
+  {id:'2b',name:'2 hab · 2do o 3er nivel',m2:91,plano:'plano-2h-balcon.jpg',
+   lead:'2 habitaciones y 2 baños, 91 m² de construcción, con balcón privado.',
+   spaces:['Sala','Cocina abierta con comedor','2 dormitorios con closet','2 baños','Área de lavado','Balcón privado'],
+   views:[{id:'pool',name:'Vista a la piscina',price:179735},{id:'other',name:'Vista trasera',price:173555}]},
+  {id:'2p',name:'2 hab · 1er nivel con patio',m2:91,plano:'plano-2h-patio.jpg',
+   lead:'2 habitaciones y 2 baños, 91 m² de construcción, con balcón y 28.50 m² de patio privado.',
+   spaces:['Sala','Cocina abierta con comedor','2 dormitorios con closet','2 baños','Área de lavado','Balcón','Patio privado de 28.50 m²'],
+   views:[{id:'pool',name:'Orientada a la piscina',price:182825},{id:'other',name:'Vista exterior',price:176645}]},
+  {id:'1b',name:'1 hab · 2do o 3er nivel',m2:65,plano:'plano-1h-balcon.jpg',
+   lead:'1 habitación y 1 baño, 65 m² de construcción, con balcón privado.',
+   spaces:['Sala','Cocina abierta con comedor','Dormitorio con closet','Baño','Balcón privado'],
+   views:[{id:'pool',name:'Orientada a la piscina',price:131250},{id:'other',name:'Sin vista a la piscina',price:124950}]},
+  {id:'1p',name:'1 hab · 1er nivel con patio',m2:65,plano:'plano-1h-patio.jpg',
+   lead:'1 habitación y 1 baño, 65 m² de construcción, con balcón y 24 m² de patio privado.',
+   spaces:['Sala','Cocina abierta con comedor','Dormitorio con closet','Baño','Área de lavado','Balcón','Patio privado de 24 m²'],
+   views:[{id:'pool',name:'Orientada a la piscina',price:134400},{id:'other',name:'Vista trasera y a jardín',price:128100}]}
+];
+const KEY_Y=2028,KEY_M=9;
+const RES=2000,P_INI=.15,P_CON=.35,P_END=.5,RES_Y=2026,RES_M=11;
+const MES=['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
+const INI='EFMAMJJASOND'.split('');
+const DIST=[['5 min','Caminando a la playa'],['7 min','Downtown Punta Cana'],['10 min','Hospital IMG'],['25 min','Blue Mall'],['25 min','Aeropuerto de Punta Cana']];
+const usd=n=>'USD '+Math.round(n).toLocaleString('en-US');
+const idx=(y,m)=>y*12+m;
+const md=i=>MES[i%12]+' '+Math.floor(i/12);
+let st={u:'2b',v:'pool'};
+try{const s=JSON.parse(localStorage.getItem('eden-ruben')||'null');if(s&&UNITS.some(x=>x.id===s.u)&&(s.v==='pool'||s.v==='other'))st=s}catch(e){}
+const save=()=>{try{localStorage.setItem('eden-ruben',JSON.stringify(st))}catch(e){}};
+
+function plan(price){
+  const r=idx(RES_Y,RES_M),ini=r+1,first=r+2,key=idx(KEY_Y,KEY_M),last=key-1,n=last-first+1;
+  const con=price*P_CON;
+  return{r,ini,first,last,key,n,iniAmt:price*P_INI-RES,con,cuota:con/n,end:price*P_END};
+}
+const radios=(key,list,sub)=>list.map(x=>`<input type="radio" name="${key}" id="${key}-${x.id}" value="${x.id}"${st[key]===x.id?' checked':''}><label for="${key}-${x.id}"><b>${x.name}</b><span>${sub(x)}</span></label>`).join('');
+const $=id=>document.getElementById(id);
+const unitsEl=$('units'),viewsEl=$('views');
+unitsEl.innerHTML=radios('u',UNITS,x=>`${x.m2} m² · desde <span class="num">${usd(Math.min(...x.views.map(v=>v.price)))}</span>`);
+function renderViews(){const u=UNITS.find(x=>x.id===st.u);viewsEl.innerHTML=radios('v',u.views,x=>`<span class="num">${usd(x.price)}</span>`)}
+unitsEl.addEventListener('change',e=>{st.u=e.target.value;save();renderViews();render()});
+viewsEl.addEventListener('change',e=>{st.v=e.target.value;save();render()});
+
+function render(){
+  const u=UNITS.find(x=>x.id===st.u),v=u.views.find(x=>x.id===st.v),p=plan(v.price);
+  $('cuota').innerHTML=usd(p.cuota)+' <em>al mes</em>';
+  $('cuotaTxt').textContent=`${p.n} cuotas, de ${md(p.first)} a ${md(p.last)}`;
+  const rows=[
+    ['background:var(--gold)','Reserva',md(p.r),usd(RES),''],
+    ['background:var(--deep2)','Inicial, a la firma',md(p.ini),usd(p.iniAmt),'completa el 15%'],
+    ['background:var(--leaf)','Cuotas de construcción',`${md(p.first)} a ${md(p.last)}`,usd(p.con),'35%'],
+    ['background:var(--bg);box-shadow:inset 0 0 0 3px var(--deep2)','Contra entrega',md(p.key),usd(p.end),'50%']
+  ];
+  $('rows').innerHTML=rows.map(([c,t,w,a,pc])=>`<li><i style="${c}"></i><b>${t}</b><span class="amt num">${a}</span><span class="when">${w}</span><span class="pct">${pc}</span></li>`).join('');
+  $('calTxt').textContent=`${u.name}, ${v.name.toLowerCase()}: ${usd(v.price)}. Entrega en octubre 2028.`;
+  let g='<span></span>'+INI.map(l=>`<span class="m">${l}</span>`).join('');
+  for(let y=RES_Y;y<=KEY_Y;y++){
+    g+=`<span class="y">${y}</span>`;
+    for(let m=0;m<12;m++){
+      const i=idx(y,m);let c='c';
+      if(i<p.r)c+=' off';else if(i===p.r)c+=' res';else if(i===p.ini)c+=' ini';else if(i<=p.last)c+=' cuo';else if(i===p.key)c+=' key';else c+=' off';
+      g+=`<span class="${c}" title="${md(i)}"></span>`;
+    }
+  }
+  $('grid').innerHTML=g;
+  const o=u.views.find(x=>x.id!==st.v),po=plan(o.price);
+  const dT=Math.abs(v.price-o.price),dM=Math.abs(Math.round(p.cuota)-Math.round(po.cuota));
+  $('compare').innerHTML=st.v==='pool'
+    ?`${o.name}: <b class="num">${usd(o.price)}</b>, <span class="num">${usd(dT)}</span> menos, con cuotas de <b class="num">${usd(po.cuota)}</b> (<span class="num">${usd(dM)}</span> menos al mes).`
+    :`${o.name}: <b class="num">${usd(o.price)}</b>, <span class="num">${usd(dT)}</span> más, con cuotas de <b class="num">${usd(po.cuota)}</b> (<span class="num">${usd(dM)}</span> más al mes).`;
+  const pl=$('plano');pl.src='img/'+u.plano;pl.alt='Plano del apartamento de '+u.name;
+  $('aptLead').textContent=u.lead;
+  $('spaces').innerHTML=u.spaces.map(s=>`<li>${s}</li>`).join('');
+  const msg=`Hola Macarena, revisé la propuesta de Eden Suites (${u.name}, ${v.name.toLowerCase()}). Coordinemos el Zoom.`;
+  $('wa').href='https://wa.me/18295126019?text='+encodeURIComponent(msg);
+}
+renderViews();
+$('dist').innerHTML=DIST.map(([t,n])=>`<div><b class="num">${t}</b><span>${n}</span></div>`).join('');
+const strip=$('strip');
+const go=dir=>{const f=strip.querySelector('figure');strip.scrollBy({left:dir*(f.offsetWidth+12),behavior:'smooth'})};
+$('prev').addEventListener('click',()=>go(-1));
+$('next').addEventListener('click',()=>go(1));
+strip.tabIndex=0;strip.addEventListener('keydown',e=>{if(e.key==='ArrowRight')go(1);if(e.key==='ArrowLeft')go(-1)});
+render();
+}
+</script>
+</body>
+</html>
