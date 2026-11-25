@@ -1,0 +1,1136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Opciones en Punta Cana · Propuesta para el Sr. Armando Renán</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Serena Village, Palma del Este IV, Corales de Palmaré y Eden Suites. Macarena Peña, RE/MAX Ocean.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Opciones en Punta Cana · Propuesta para el Sr. Armando Renán">
+<meta property="og:description" content="Tres opciones para usar cuando venga y rentar cuando no esté, y una adicional para inversión. Macarena Peña, RE/MAX Ocean.">
+<meta property="og:image" content="https://macarenapena.com/armando-renan/img/serena-hero.jpg">
+<meta property="og:url" content="https://macarenapena.com/armando-renan/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+<style>
+/* VOICE everyday-premium: an advisor walking one client through four homes on a Zoom, calm and exact
+   IDEA Macarena's own brochures (teal, cream, sand, Poppins) bound into one booklet, with the numbers live
+   PICTURE the payment calendar, one cell per month from today's reservation to the keys, recoloured as she types
+   COLOUR cream #f7f5f0 ground, teal #0f5e62 fields, sand #efe8dc cards, cuotas #5fa79b, reserva #c39a5a
+   TYPE Poppins light for titles, regular for text; Montserrat small caps for labels, as in the brochures
+   LAYOUT sticky index; cover + agenda; one chapter per option (photo, facts, price or live plan, gallery, place); comparison + map; next step */
+:root{color-scheme:light;--bg:#f7f5f0;--ink:#1e2c2c;--soft:#5b6968;--line:#e1d9cc;--sand:#efe8dc;--sand2:#f3eee5;--teal:#0f5e62;--teal2:#08776d;--cuo:#5fa79b;--gold:#c39a5a;--white:#fff}
+*{box-sizing:border-box;min-width:0}
+html{scroll-behavior:smooth;scroll-padding-top:64px}
+html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font:16px/1.6 Poppins,system-ui,sans-serif;overflow-x:clip}
+img{max-width:100%;display:block}
+a{color:var(--teal2)}
+h1,h2,h3{font-weight:300;line-height:1.12;letter-spacing:-.01em;text-wrap:balance;margin:0}
+h2{font-size:clamp(30px,4vw,44px)}
+h3{font-size:clamp(24px,2.8vw,32px)}
+.rule::before{content:"";display:block;width:34px;height:3px;background:var(--teal2);margin-bottom:16px}
+.kick{font:600 11px/1.4 Montserrat,sans-serif;letter-spacing:.22em;text-transform:uppercase;color:var(--teal2);margin:0 0 10px}
+.band{padding:clamp(36px,5vw,72px) max(5vw,18px)}
+.wrap{max-width:1200px;margin:0 auto}
+.lead{color:var(--soft);margin:14px 0 0;max-width:64ch}
+.num{font-variant-numeric:tabular-nums;white-space:nowrap}
+.ic{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;flex:none}
+/* nav */
+.top{position:sticky;top:0;z-index:1000;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;gap:20px;padding:10px max(5vw,18px);max-width:none}
+.brand{font-weight:600;font-size:14px;white-space:nowrap;color:var(--teal)}
+.brand span{font-weight:400;color:var(--soft)}
+.links{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;margin-left:auto}
+.links::-webkit-scrollbar{display:none}
+.links a{flex:none;font:600 11px/1 Montserrat,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--soft);text-decoration:none;padding:10px 12px;border-radius:30px;white-space:nowrap}
+.links a:hover{color:var(--teal)}
+.links a.on{background:var(--teal);color:#fff}
+@media(max-width:760px){.brand{display:none}.links{margin-left:0}}
+/* cover */
+.cover{position:relative;background:var(--teal)}
+.mosaic{display:grid;grid-template-columns:1fr;height:clamp(300px,52vw,600px)}
+.mosaic img{width:100%;height:100%;object-fit:cover}
+.mosaic img+img{display:none}
+@media(min-width:900px){.mosaic{grid-template-columns:1.3fr 1fr 1fr}.mosaic img+img{display:block}}
+.cpanel{background:var(--teal);color:#eef5f3;padding:28px max(5vw,18px) 30px}
+.cpanel h1{font-size:clamp(36px,5vw,60px);color:#fff}
+.cpanel .kick{color:#9fd3c9}
+.cpanel p{margin:14px 0 0;max-width:58ch;color:#d4e6e2}
+@media(min-width:900px){.cpanel{position:absolute;left:max(5vw,18px);bottom:0;max-width:640px;padding:34px 38px 36px}}
+.seek{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.seek span{display:inline-flex;align-items:center;gap:8px;background:var(--sand);border-radius:30px;padding:8px 14px;font-size:14px}
+.seek b{font-weight:600;color:var(--teal)}
+.agenda{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));margin-top:28px}
+.ag{display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;text-decoration:none;color:inherit;transition:transform .2s,box-shadow .2s}
+.ag:hover{transform:translateY(-2px);box-shadow:0 10px 24px -14px rgba(15,94,98,.45)}
+.ag:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.ag img{aspect-ratio:16/10;object-fit:cover;width:100%}
+.ag div{padding:14px 16px 16px;display:flex;flex-direction:column;gap:2px;flex:1}
+.ag .kick{margin:0 0 4px;font-size:10px}
+.ag b{font-size:19px;font-weight:500;line-height:1.25}
+.ag span{font-size:14px;color:var(--soft)}
+.ag .pr{margin-top:auto;padding-top:10px;font-weight:600;color:var(--teal);font-size:15px}
+.ag.extra{background:var(--sand2);border-style:dashed}
+.checks{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));margin-top:24px}
+.checks div{background:var(--sand);border-radius:12px;padding:18px 20px}
+.checks b{display:flex;align-items:center;gap:10px;color:var(--teal);font-weight:600;margin-bottom:6px}
+.checks p{margin:0;font-size:15px;color:var(--ink)}
+/* option chapter */
+.ohero{position:relative;background:var(--teal)}
+.ohero img{width:100%;height:clamp(280px,46vw,560px);object-fit:cover}
+.otag{position:absolute;top:18px;left:max(5vw,18px);background:#fff;color:var(--teal);font:600 10.5px/1 Montserrat,sans-serif;letter-spacing:.2em;text-transform:uppercase;padding:9px 14px;border-radius:30px}
+.obox{background:var(--teal);color:#fff;padding:22px 26px 24px}
+.obox h2{color:#fff;font-weight:600;font-size:clamp(30px,3.6vw,42px);line-height:1.08}
+.obox .loc{font:600 10px/1 Montserrat,sans-serif;letter-spacing:.42em;color:#bfe1da;margin-top:10px}
+.obox .by{margin-top:16px;padding-top:12px;border-top:1px solid rgba(255,255,255,.3);font-size:13px;color:#d4e6e2}
+@media(min-width:760px){.obox{position:absolute;top:0;right:max(5vw,18px);width:min(330px,40%)}}
+.intro{display:grid;gap:clamp(24px,4vw,56px);grid-template-columns:minmax(0,1fr)}
+@media(min-width:960px){.intro{grid-template-columns:minmax(0,7fr) minmax(0,4fr);align-items:start}}
+.facts{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px;margin-top:22px}
+.facts div{background:var(--sand);border-radius:8px;padding:14px 14px 12px;color:var(--teal)}
+.facts b{display:block;font-weight:600;font-size:14.5px;margin-top:8px;line-height:1.3}
+.facts span{display:block;font-size:12.5px;color:var(--soft);line-height:1.35}
+.fin{margin-top:18px;font-size:14px;color:var(--soft)}
+.fin b{color:var(--ink);font-weight:600}
+.pbox{display:grid;gap:10px}
+.pmain{background:var(--teal);color:#fff;border-radius:6px;padding:18px 22px}
+.plab{font:600 10px/1.3 Montserrat,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:#bfe1da}
+.pval{font-size:clamp(30px,3.4vw,40px);font-weight:600;line-height:1.15;margin-top:4px}
+.psub{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.psub div{background:var(--sand);border-radius:6px;padding:14px 16px}
+.psub .plab{color:var(--teal2)}
+.psub b{display:block;font-size:22px;font-weight:600;color:var(--teal);margin-top:2px}
+.mapbtn{display:flex;align-items:center;justify-content:center;gap:10px;min-height:52px;border-radius:10px;border:1.5px solid var(--teal);color:var(--teal);text-decoration:none;font-weight:500;padding:12px 18px;background:#fff}
+.mapbtn:hover{background:var(--teal);color:#fff}
+.mapbtn:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.aside-note{font-size:13.5px;color:var(--soft);margin:2px 0 0}
+.honest{background:#fff;border-left:4px solid var(--gold);border-radius:4px 12px 12px 4px;padding:16px 20px;margin-top:20px;font-size:15px}
+.honest b{color:var(--teal)}
+/* level picker (Palma) */
+.seg{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.seg input{position:absolute;opacity:0;pointer-events:none}
+.seg label{display:block;min-height:58px;padding:11px 14px;border:1.5px solid var(--line);border-radius:10px;cursor:pointer;background:#fff;transition:border-color .15s,background .15s}
+.seg label b{display:block;font-weight:600;line-height:1.3;font-size:15px}
+.seg label span{display:block;font-size:13.5px;color:var(--soft);margin-top:2px}
+.seg label span.num{color:var(--teal);font-weight:600;margin-top:4px}
+.seg input:checked+label{border-color:var(--teal);background:color-mix(in srgb,var(--cuo) 14%,#fff);box-shadow:inset 0 0 0 1px var(--teal)}
+.seg input:focus-visible+label{outline:3px solid var(--gold);outline-offset:2px}
+.seg label:hover{border-color:var(--soft)}
+.levels{display:grid;gap:clamp(20px,3vw,40px);grid-template-columns:minmax(0,1fr);margin-top:26px}
+@media(min-width:960px){.levels{grid-template-columns:minmax(0,6fr) minmax(0,5fr);align-items:start}}
+.levels figure{margin:0}
+.levels figure img{border-radius:10px;aspect-ratio:3/2;object-fit:cover;width:100%}
+.levels figcaption{font-size:13px;color:var(--soft);margin-top:8px}
+.lvdet{list-style:none;padding:0;margin:16px 0 0;border-top:1px solid var(--line)}
+.lvdet li{display:flex;justify-content:space-between;gap:12px;padding:11px 0;border-bottom:1px solid var(--line);font-size:15px}
+.lvdet li b{font-weight:600;text-align:right}
+/* calculator */
+.calcwrap{margin-top:30px;padding-top:30px;border-top:1px solid var(--line)}
+.tool{display:grid;gap:clamp(24px,3.5vw,48px);grid-template-columns:minmax(0,1fr);margin-top:22px}
+@media(min-width:960px){.tool{grid-template-columns:minmax(0,5fr) minmax(0,6fr);align-items:start}}
+fieldset{border:0;padding:0;margin:0 0 16px}
+legend{font-weight:600;font-size:14px;margin-bottom:8px}
+.deliv{font-size:14px;margin:-2px 0 14px;color:var(--soft)}
+.deliv b{color:var(--ink)}
+.result{background:var(--teal);color:#fff;border-radius:12px;padding:20px 22px}
+.result small{display:block;color:#bfe1da;font-size:14px}
+.big{font-size:clamp(40px,6vw,60px);font-weight:600;line-height:1.05;letter-spacing:-.02em;margin:4px 0}
+.big em{font-style:normal;font-size:.38em;font-weight:400;color:#bfe1da}
+.rows{list-style:none;margin:18px 0 0;padding:0;border-top:1px solid var(--line)}
+.rows li{display:grid;grid-template-columns:14px minmax(0,1fr) auto;gap:2px 12px;align-items:baseline;padding:12px 0;border-bottom:1px solid var(--line)}
+.rows i{width:12px;height:12px;border-radius:3px;align-self:center}
+.rows b{font-weight:600}
+.rows .when{grid-column:2;font-size:14px;color:var(--soft)}
+.rows .amt{grid-row:1;grid-column:3;text-align:right;font-weight:600}
+.rows .pct{grid-column:3;text-align:right;font-size:13.5px;color:var(--soft)}
+.rows li.tot{border-bottom:0}
+.rows li.tot b,.rows li.tot .amt{color:var(--teal)}
+.note{font-size:14px;color:var(--soft);margin:12px 0 0}
+.warn{margin-top:12px;background:#fff4e2;border:1px solid #ecd3a6;color:#6b4a14;border-radius:10px;padding:10px 14px;font-size:14px}
+.warn p{margin:0}.warn p+p{margin-top:6px}
+.live{background:#fff;border:1.5px solid var(--teal);border-radius:12px;margin-bottom:16px}
+.live summary{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;padding:14px 18px;cursor:pointer;list-style:none}
+.live summary::-webkit-details-marker{display:none}
+.live summary span{font-weight:600;color:var(--teal);display:flex;align-items:center;gap:8px}
+.live summary span::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--cuo);box-shadow:0 0 0 4px color-mix(in srgb,var(--cuo) 25%,transparent)}
+.live summary small{color:var(--soft);font-size:13px}
+.live summary::after{content:"−";margin-left:auto;font-size:20px;color:var(--teal);line-height:1}
+.live:not([open]) summary::after{content:"+"}
+.fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 14px;padding:2px 18px 6px}
+.fields label{display:flex;flex-direction:column;gap:5px;font-size:12.5px;font-weight:500;color:var(--soft)}
+.fields input,.fields select{font:500 15px/1.2 Poppins,sans-serif;color:var(--ink);background:var(--sand2);border:1.5px solid var(--line);border-radius:8px;padding:10px 10px;width:100%;min-height:44px}
+.fields input:focus,.fields select:focus{outline:none;border-color:var(--teal);background:#fff}
+.inp{position:relative;display:block}
+.inp input{padding-left:44px}
+.inp::before{position:absolute;left:10px;top:50%;transform:translateY(-50%);font-size:12px;font-weight:600;color:var(--soft);pointer-events:none}
+.inp.usd::before{content:"USD"}
+.inp.pct input{padding-left:10px;padding-right:30px}
+.inp.pct::before{content:"%";left:auto;right:12px}
+.fields .mod input,.fields .mod select{border-color:var(--gold);background:#fffaf1}
+.fields .mod{color:#8a6224}
+.live-f{display:flex;gap:10px;flex-wrap:wrap;align-items:center;padding:8px 18px 16px}
+.btn2{font:500 14px/1 Poppins,sans-serif;border-radius:30px;padding:11px 16px;border:1.5px solid var(--teal);background:#fff;color:var(--teal);cursor:pointer;min-height:42px}
+.btn2:hover{background:var(--teal);color:#fff}
+.btn2:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.btn2.hot{background:var(--gold);border-color:var(--gold);color:#fff}
+.live-f small{font-size:12.5px;color:var(--soft)}
+.cal{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px clamp(12px,2.2vw,22px)}
+.cal h4{margin:0 0 4px;font-size:16px;font-weight:600}
+.cal p{margin:0 0 14px;font-size:14px;color:var(--soft)}
+.grid{display:grid;grid-template-columns:44px repeat(12,minmax(0,1fr));gap:5px;align-items:center}
+.grid .m{font-size:12px;color:var(--soft);text-align:center}
+.grid .y{font-size:12.5px;font-weight:600;color:var(--soft)}
+.c{aspect-ratio:1;border-radius:5px;background:var(--sand);transition:background .3s;position:relative}
+.c.res{background:var(--gold)}.c.ini{background:var(--teal)}.c.cuo{background:var(--cuo)}
+.c.res.ini{background:linear-gradient(135deg,var(--gold) 50%,var(--teal) 50%)}
+.c.ini.cuo{background:linear-gradient(135deg,var(--teal) 50%,var(--cuo) 50%)}
+.c.zero{background:repeating-linear-gradient(45deg,var(--sand) 0 4px,#fff 4px 8px)}
+.c.lk::after{content:"";position:absolute;right:3px;top:3px;width:6px;height:6px;border-radius:50%;background:#fff;box-shadow:0 0 0 1.5px var(--teal)}
+.c.key{background:#fff;box-shadow:inset 0 0 0 3px var(--teal)}
+.c.key::before{content:"";position:absolute;inset:30%;border-radius:50%;background:var(--gold)}
+.c.off{background:transparent}
+.legend{display:flex;flex-wrap:wrap;gap:8px 16px;margin-top:14px;font-size:13.5px}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.legend i{width:12px;height:12px;border-radius:3px;display:inline-block}
+.detail{margin-top:14px;background:#fff;border:1px solid var(--line);border-radius:12px}
+.detail summary{padding:14px 18px;cursor:pointer;font-weight:600;color:var(--teal)}
+.detail .hint{margin:0;padding:0 18px 10px;font-size:13.5px;color:var(--soft)}
+.tablewrap{max-height:440px;overflow:auto;padding:0 18px}
+.dt{width:100%;border-collapse:collapse;font-size:14px}
+.dt th{text-align:left;font-weight:600;font-size:12px;color:var(--soft);padding:8px 6px;border-bottom:1px solid var(--line);position:sticky;top:0;background:#fff}
+.dt td{padding:6px;border-bottom:1px solid var(--line)}
+.dt td:last-child,.dt th:last-child{text-align:right}
+.dt input{font:500 14px Poppins,sans-serif;width:118px;text-align:right;border:1.5px solid var(--line);border-radius:6px;padding:7px 8px;background:var(--sand2);color:var(--ink)}
+.dt input:focus{outline:none;border-color:var(--teal);background:#fff}
+.dt input.lk{border-color:var(--gold);background:#fffaf1;font-weight:600}
+.dt tfoot td{font-weight:600;color:var(--teal);border-bottom:0;padding-top:10px}
+.detail .live-f{padding-top:12px}
+/* apartment block */
+.apt{display:grid;gap:clamp(20px,3vw,40px);grid-template-columns:minmax(0,1fr);margin-top:30px}
+@media(min-width:960px){.apt{grid-template-columns:minmax(0,5fr) minmax(0,6fr);align-items:start}}
+.plano{background:#fff;border:1px solid var(--line);border-radius:10px;padding:12px}
+.plano.dark{background:#000;border-color:#000}
+.plano img{max-height:min(68vh,540px);width:auto;margin:0 auto}
+.plano figcaption,.cap{font-size:13px;color:var(--soft);margin-top:8px}
+figure{margin:0}
+.spaces{columns:2;column-gap:20px;padding:0;margin:14px 0 0;list-style:none}
+.spaces li{break-inside:avoid;padding:7px 0;border-bottom:1px solid var(--line);font-size:15px}
+.term{margin-top:16px;padding:14px 16px;border-radius:10px;background:var(--sand);font-size:14.5px}
+.term b{color:var(--teal)}
+/* gallery */
+.gal{margin-top:34px}
+.strip{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding-bottom:4px}
+.strip::-webkit-scrollbar{display:none}
+.strip figure{flex:0 0 min(84%,520px);scroll-snap-align:start;position:relative}
+.strip img{border-radius:10px;width:100%;aspect-ratio:3/2;object-fit:cover;background:var(--sand)}
+.strip.tall figure{flex-basis:min(62%,290px)}
+.strip.tall img{aspect-ratio:3/4}
+.chip{position:absolute;left:10px;bottom:10px;background:#fff;color:var(--teal);font:600 9.5px/1 Montserrat,sans-serif;letter-spacing:.18em;text-transform:uppercase;padding:7px 10px;border-radius:30px}
+.galnav{display:flex;gap:8px;justify-content:space-between;align-items:center;margin-top:12px}
+.galnav small{font-size:13px;color:var(--soft)}
+.galnav div{display:flex;gap:8px}
+.galnav button{width:44px;height:44px;border-radius:50%;border:1.5px solid var(--teal);background:#fff;color:var(--teal);font-size:18px;cursor:pointer}
+.galnav button:hover{background:var(--teal);color:#fff}
+.galnav button:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+/* place */
+.place{background:var(--teal);color:#e9f3f1}
+.place .kick{color:#9fd3c9}
+.place h3{color:#fff}
+.pgrid{display:grid;gap:clamp(24px,4vw,56px);grid-template-columns:minmax(0,1fr);margin-top:22px}
+@media(min-width:960px){.pgrid{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
+.amen{margin:0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(14em,1fr));gap:0 22px}
+.amen li{padding:9px 0;border-bottom:1px solid rgba(255,255,255,.16);display:flex;gap:10px;align-items:center}
+.amen .ic{width:18px;height:18px;color:#9fd3c9}
+.dist{list-style:none;margin:0;padding:0;border-top:1px solid rgba(255,255,255,.22)}
+.dist li{display:grid;grid-template-columns:7.2em minmax(0,1fr);align-items:baseline;gap:12px;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.22)}
+.dist b{font-size:30px;font-weight:600;color:#fff;line-height:1}
+.dist b small{font-size:13px;font-weight:400;color:#bfe1da;margin-left:3px}
+.near{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.near span{font-size:13px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:30px;padding:6px 12px}
+.place .mapbtn{background:transparent;border-color:#fff;color:#fff;margin-top:18px}
+.place .mapbtn:hover{background:#fff;color:var(--teal)}
+.wide{margin-top:clamp(24px,3vw,36px)}
+.wide img{border-radius:10px;width:100%}
+.wide figcaption{font-size:13px;color:#bfe1da;margin-top:8px}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.pair img{aspect-ratio:4/5;object-fit:cover}
+/* llave en mano */
+.turnkey{display:grid;grid-template-columns:minmax(0,1fr);gap:0;margin-top:30px;border-radius:12px;overflow:hidden;background:var(--teal);color:#e9f3f1}
+@media(min-width:900px){.turnkey{grid-template-columns:minmax(0,5fr) minmax(0,6fr)}}
+.turnkey>div{padding:26px 28px}
+.turnkey h4{font-size:24px;font-weight:300;color:#fff;margin:0 0 10px;line-height:1.2}
+.turnkey ol{list-style:none;padding:0;margin:16px 0 0;counter-reset:s}
+.turnkey li{counter-increment:s;padding:6px 0;font-size:15px}
+.turnkey li::before{content:"0" counter(s);font-weight:600;color:#9fd3c9;margin-right:12px}
+.turnkey img{width:100%;height:100%;object-fit:cover;min-height:240px}
+/* compare */
+.tblwrap{overflow-x:auto;margin-top:24px;border:1px solid var(--line);border-radius:12px;background:#fff}
+.cmp{width:100%;border-collapse:collapse;min-width:760px;font-size:14.5px}
+.cmp th,.cmp td{padding:13px 16px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+.cmp thead th{background:var(--teal);color:#fff;font-weight:500;font-size:15px}
+.cmp thead th small{display:block;font:600 9.5px/1.4 Montserrat,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#bfe1da}
+.cmp tbody th{font-weight:600;color:var(--soft);font-size:13px;width:150px;background:var(--sand2)}
+.cmp tr:last-child td,.cmp tr:last-child th{border-bottom:0}
+.cmp td.x{background:var(--sand2);color:var(--soft)}
+.cmp a{display:inline-flex;align-items:center;gap:6px;font-weight:500}
+#map{height:clamp(360px,50vw,520px);border-radius:12px;margin-top:24px;background:var(--sand);z-index:1}
+.pin{display:grid;place-items:center;width:34px;height:34px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);background:var(--teal);border:2.5px solid #fff;box-shadow:0 4px 10px rgba(0,0,0,.3)}
+.pin span{transform:rotate(45deg);color:#fff;font:600 13px Poppins,sans-serif}
+.pin.extra{background:var(--gold)}
+.pin.ref{background:#6f7b7a;width:26px;height:26px}
+.pin.ref span{font-size:10px}
+.leaflet-tooltip.tip{font:500 13px Poppins,sans-serif;color:var(--ink);border:0;border-radius:6px;box-shadow:0 3px 10px rgba(0,0,0,.18);padding:4px 8px}
+.leaflet-popup-content{font:14px/1.45 Poppins,sans-serif}
+.foot-note{font-size:13px;color:var(--soft);margin-top:10px}
+/* next */
+.next{display:grid;gap:22px;grid-template-columns:minmax(0,1fr);align-items:center}
+@media(min-width:900px){.next{grid-template-columns:minmax(0,3fr) minmax(0,2fr)}}
+.btn{display:flex;align-items:center;justify-content:center;gap:10px;min-height:56px;padding:14px 22px;border-radius:12px;background:var(--teal);color:#fff;font-weight:500;text-decoration:none;text-align:center}
+.btn:hover{background:var(--teal2)}
+.btn:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.contact{font-size:14.5px;color:var(--soft);margin-top:12px}
+footer{border-top:1px solid var(--line);font-size:12.5px;color:var(--soft)}
+footer p{margin:0 0 7px;max-width:110ch}
+@media(max-width:600px){.facts{grid-template-columns:repeat(2,minmax(0,1fr))}.spaces{columns:1}.grid{grid-template-columns:34px repeat(12,minmax(0,1fr));gap:3px}.fields{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:10px;padding:2px 14px 6px}.psub b{font-size:19px}.seg label{padding:10px 11px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.c,.ag{transition:none}}
+@media print{.top,.live,.detail,.galnav{display:none}}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-bed" viewBox="0 0 24 24"><path d="M3 18V7M3 13h18v5M21 18v-3a3 3 0 0 0-3-3h-7v1"/><circle cx="7" cy="10.5" r="1.8"/></symbol>
+  <symbol id="i-bath" viewBox="0 0 24 24"><path d="M4 12h16v2a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5zM6 12V6a2 2 0 0 1 4 0M7 19l-1 2M17 19l1 2"/></symbol>
+  <symbol id="i-car" viewBox="0 0 24 24"><path d="M5 16v-4l2-5h10l2 5v4M3 16h18v3H3zM7 19v1M17 19v1"/></symbol>
+  <symbol id="i-sofa" viewBox="0 0 24 24"><path d="M4 11V8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v3M3 11h3v4h12v-4h3v6H3zM5 17v2M19 17v2"/></symbol>
+  <symbol id="i-key" viewBox="0 0 24 24"><circle cx="8" cy="15" r="4"/><path d="M11 12l8-8M16 7l2 2M14 9l2 2"/></symbol>
+  <symbol id="i-level" viewBox="0 0 24 24"><path d="M5 21V4h14v17M9 8h2M13 8h2M9 12h2M13 12h2M9 16h2M13 16h2M3 21h18"/></symbol>
+  <symbol id="i-area" viewBox="0 0 24 24"><path d="M4 4h16v16H4zM4 9h3M4 14h3M9 4v3M14 4v3"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6z"/><path d="M8.5 12l2.5 2.5L16 9.5"/></symbol>
+  <symbol id="i-doc" viewBox="0 0 24 24"><path d="M7 3h7l5 5v13H7zM14 3v5h5M10 13h6M10 17h6"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
+  <symbol id="i-lift" viewBox="0 0 24 24"><path d="M5 3h14v18H5zM9 9l3-3 3 3M9 15l3 3 3-3"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></symbol>
+  <symbol id="i-cal" viewBox="0 0 24 24"><path d="M4 6h16v15H4zM4 10h16M8 3v5M16 3v5"/></symbol>
+  <symbol id="i-home" viewBox="0 0 24 24"><path d="M3 11l9-7 9 7M5 10v10h14V10M10 20v-5h4v5"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+  <symbol id="i-out" viewBox="0 0 24 24"><path d="M7 17L17 7M9 7h8v8"/></symbol>
+  <symbol id="i-tax" viewBox="0 0 24 24"><path d="M5 19L19 5"/><circle cx="7" cy="7" r="2.5"/><circle cx="17" cy="17" r="2.5"/></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></symbol>
+</svg>
+
+<nav class="top" aria-label="Secciones">
+  <div class="wrap">
+    <div class="brand">Macarena Peña <span>· RE/MAX Ocean</span></div>
+    <div class="links">
+      <a href="#inicio">Inicio</a>
+      <a href="#serena">1 · Serena</a>
+      <a href="#palma">2 · Palma del Este</a>
+      <a href="#corales">3 · Corales</a>
+      <a href="#eden">+ Eden Suites</a>
+      <a href="#comparar">Comparar</a>
+    </div>
+  </div>
+</nav>
+
+<!-- COVER -->
+<header class="cover" id="inicio">
+  <div class="mosaic">
+    <img src="img/serena-hero.jpg" alt="Edificios y piscina de Serena Village">
+    <img src="img/palma-hero.jpg" alt="Piscina de Palma del Este IV">
+    <img src="img/corales-hero.jpg" alt="Piscina de Corales de Palmaré">
+  </div>
+  <div class="cpanel">
+    <p class="kick">Propuesta para el Sr. Armando Renán</p>
+    <h1>Su apartamento en Punta Cana</h1>
+    <p>Tres opciones en torno a su presupuesto para comparar entre comprar en plano y recibir algo listo, pensadas para usar el apartamento cuando venga y ponerlo en renta cuando no esté.</p>
+  </div>
+</header>
+
+<section class="band">
+  <div class="wrap">
+    <p class="kick">Lo que usted busca</p>
+    <div class="seek">
+      <span><svg class="ic"><use href="#i-tax"/></svg>Presupuesto <b class="num">USD 120,000</b></span>
+      <span><svg class="ic"><use href="#i-bed"/></svg><b>2 habitaciones</b></span>
+      <span><svg class="ic"><use href="#i-key"/></svg>Recibir en <b>2027</b></span>
+      <span><svg class="ic"><use href="#i-cal"/></svg>Inicial en <b>diciembre</b></span>
+      <span><svg class="ic"><use href="#i-home"/></svg><b>Uso propio y renta</b></span>
+    </div>
+    <div class="agenda">
+      <a class="ag" href="#serena"><img src="img/serena-hero.jpg" alt=""><div><p class="kick">Opción 1 · Lista y amueblada</p><b>Serena Village</b><span>2 hab · 78 m² · entrega inmediata</span><span class="pr num">USD 135,000</span></div></a>
+      <a class="ag" href="#palma"><img src="img/palma-fachada.jpg" alt=""><div><p class="kick">Opción 2 · Lista con título</p><b>Palma del Este IV</b><span>2 hab · 72 m² · entrega inmediata</span><span class="pr num">Desde USD 96,750</span></div></a>
+      <a class="ag" href="#corales"><img src="img/corales-portico.jpg" alt=""><div><p class="kick">Opción 3 · En plano</p><b>Corales de Palmaré</b><span>3 hab · 95 m² · entrega junio 2027</span><span class="pr num">Desde USD 114,999</span></div></a>
+      <a class="ag extra" href="#eden"><img src="img/eden-hero.jpg" alt=""><div><p class="kick">Adicional · Para inversión</p><b>Eden Suites</b><span>1 hab · 65 m² · entrega octubre 2028</span><span class="pr num">Desde USD 124,950</span></div></a>
+    </div>
+  </div>
+</section>
+
+<section class="band" style="padding-top:0">
+  <div class="wrap">
+    <h2 class="rule">Qué conviene revisar en cada opción</h2>
+    <p class="lead">Para un uso mixto como el suyo, el precio no es lo único que importa.</p>
+    <div class="checks">
+      <div><b><svg class="ic"><use href="#i-home"/></svg>Renta corta</b><p>No todos los residenciales permiten Airbnb en su reglamento.</p></div>
+      <div><b><svg class="ic"><use href="#i-user"/></svg>Administración</b><p>Si es opcional u obligatoria, y si le permite reservar fechas para su uso personal.</p></div>
+      <div><b><svg class="ic"><use href="#i-shield"/></svg>CONFOTUR</b><p>Exonera el impuesto de transferencia (3%) y el impuesto a la propiedad (IPI) por 15 años.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= OPCIÓN 1 · SERENA ================= -->
+<article id="serena">
+  <div class="ohero">
+    <img src="img/serena-piscina.jpg" alt="Piscina tipo resort frente a los edificios de Serena Village" loading="lazy">
+    <span class="otag">Opción 1 · Lista y amueblada</span>
+    <div class="obox"><h2>Serena Village</h2><div class="loc">PUNTA CANA</div><div class="by">Nuevo a estrenar · Fotos reales del apartamento</div></div>
+  </div>
+  <section class="band">
+    <div class="wrap intro">
+      <div>
+        <p class="kick">Apartamento en venta</p>
+        <h3 class="rule">Vive al estilo resort</h3>
+        <p class="lead">Apartamento nuevo a estrenar, en un cuarto nivel con vista a la piscina y completamente amueblado: listo para ponerlo en renta desde el primer día o para disfrutarlo con su familia.</p>
+        <div class="facts">
+          <div><svg class="ic"><use href="#i-bed"/></svg><b>2 habitaciones</b><span>Principal y secundaria</span></div>
+          <div><svg class="ic"><use href="#i-bath"/></svg><b>2 baños</b><span>Completos</span></div>
+          <div><svg class="ic"><use href="#i-sofa"/></svg><b>Concepto abierto</b><span>Sala, cocina y comedor</span></div>
+          <div><svg class="ic"><use href="#i-car"/></svg><b>1 parqueo</b><span>Incluido</span></div>
+          <div><svg class="ic"><use href="#i-key"/></svg><b>Amueblado</b><span>Listo para vivir o rentar</span></div>
+          <div><svg class="ic"><use href="#i-level"/></svg><b>4to nivel</b><span>Vista a la piscina</span></div>
+        </div>
+        <p class="fin">Edificios de 4 niveles, cada uno con <b>elevador</b>. Cocina con topes de granito y terraza con comedor exterior.</p>
+      </div>
+      <aside class="pbox">
+        <div class="pmain"><div class="plab">Precio de venta</div><div class="pval num">USD 135,000</div></div>
+        <div class="psub">
+          <div><div class="plab">Superficie</div><b>78 m²</b></div>
+          <div><div class="plab">Entrega</div><b>Inmediata</b></div>
+        </div>
+        <a class="mapbtn" href="https://www.google.com/maps/search/?api=1&amp;query=Serena%20Village%20Punta%20Cana&amp;query_place_id=ChIJi1AXZu-TqI4R3Qrdj_8FwQA" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Ver ubicación en Google Maps</a>
+      </aside>
+    </div>
+    <div class="wrap gal">
+      <div class="strip tall">
+        <figure><img src="img/serena-sala.jpg" alt="Sala del apartamento" loading="lazy"><span class="chip">Sala</span></figure>
+        <figure><img src="img/serena-cocina.jpg" alt="Cocina con tope de granito" loading="lazy"><span class="chip">Cocina</span></figure>
+        <figure><img src="img/serena-terraza.jpg" alt="Terraza con comedor exterior" loading="lazy"><span class="chip">Terraza</span></figure>
+        <figure><img src="img/serena-hab1.jpg" alt="Habitación principal con cama matrimonial" loading="lazy"><span class="chip">Habitación principal</span></figure>
+        <figure><img src="img/serena-hab2.jpg" alt="Segunda habitación" loading="lazy"><span class="chip">Segunda habitación</span></figure>
+        <figure><img src="img/serena-bano.jpg" alt="Baño con ducha tipo lluvia" loading="lazy"><span class="chip">Baño</span></figure>
+        <figure><img src="img/serena-closet.jpg" alt="Closet con escritorio" loading="lazy"><span class="chip">Closet y escritorio</span></figure>
+      </div>
+      <div class="galnav"><small>Fotos reales del apartamento</small><div><button type="button" data-dir="-1" aria-label="Foto anterior">&#8592;</button><button type="button" data-dir="1" aria-label="Foto siguiente">&#8594;</button></div></div>
+    </div>
+  </section>
+  <section class="band place">
+    <div class="wrap">
+      <p class="kick">El residencial</p>
+      <h3 class="rule">Comunidad cerrada con más de 9 piscinas</h3>
+      <div class="pgrid">
+        <div>
+          <ul class="amen">
+            <li><svg class="ic"><use href="#i-check"/></svg>Piscinas tipo resort (más de 9)</li>
+            <li><svg class="ic"><use href="#i-check"/></svg>Canchas de pádel, fútbol y baloncesto</li>
+            <li><svg class="ic"><use href="#i-check"/></svg>Áreas verdes y ciclovía</li>
+            <li><svg class="ic"><use href="#i-check"/></svg>Parque infantil y gazebos</li>
+            <li><svg class="ic"><use href="#i-check"/></svg>Área de picnic y áreas sociales</li>
+            <li><svg class="ic"><use href="#i-check"/></svg>Shuttle hacia la playa</li>
+            <li><svg class="ic"><use href="#i-check"/></svg>Comunidad cerrada y segura</li>
+          </ul>
+          <div class="near"><span>384 unidades</span><span>20,000 m² de naturaleza</span></div>
+        </div>
+        <div>
+          <ul class="dist">
+            <li><b>12<small>min</small></b><span>Aeropuerto Internacional de Punta Cana</span></li>
+            <li><b>10<small>min</small></b><span>Downtown Punta Cana</span></li>
+            <li><b>15–20<small>min</small></b><span>Playas</span></li>
+          </ul>
+          <div class="near"><span>Supermercados</span><span>Centros médicos</span><span>Comercios</span></div>
+          <a class="mapbtn" href="https://www.google.com/maps/search/?api=1&amp;query=Serena%20Village%20Punta%20Cana&amp;query_place_id=ChIJi1AXZu-TqI4R3Qrdj_8FwQA" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Abrir en Google Maps</a>
+        </div>
+      </div>
+      <figure class="wide"><img src="img/serena-masterplan.jpg" alt="Máster plan de Serena Village" loading="lazy"><figcaption>Máster plan de Serena Village. Render del proyecto con fines ilustrativos.</figcaption></figure>
+    </div>
+  </section>
+</article>
+
+<!-- ================= OPCIÓN 2 · PALMA DEL ESTE IV ================= -->
+<article id="palma">
+  <div class="ohero">
+    <img src="img/palma-hero.jpg" alt="Piscina de Palma del Este IV" loading="lazy">
+    <span class="otag">Opción 2 · Lista con título</span>
+    <div class="obox"><h2>Palma del Este IV</h2><div class="loc">PUNTA CANA</div><div class="by">Listo para entrega · Residencial Pueblo Bávaro</div></div>
+  </div>
+  <section class="band">
+    <div class="wrap intro">
+      <div>
+        <p class="kick">Apartamentos de 2 habitaciones</p>
+        <h3 class="rule">Listo para estrenar, con título</h3>
+        <p class="lead">Apartamentos terminados, con título disponible para entrega inmediata, dentro del Residencial Pueblo Bávaro: una comunidad con seguridad y plaza comercial en la entrada.</p>
+        <div class="facts">
+          <div><svg class="ic"><use href="#i-doc"/></svg><b>Con título</b><span>Entrega inmediata</span></div>
+          <div><svg class="ic"><use href="#i-shield"/></svg><b>CONFOTUR</b><span>Beneficios fiscales</span></div>
+          <div><svg class="ic"><use href="#i-home"/></svg><b>Airbnb friendly</b><span>Permite renta corta</span></div>
+          <div><svg class="ic"><use href="#i-level"/></svg><b>3 niveles</b><span>Con portón eléctrico</span></div>
+        </div>
+        <p class="fin">Pisos en porcelanato, cocina modular con tope de granito, cerámica importada en baños y cocina, closets y puertas en madera preciosa.</p>
+      </div>
+      <aside class="pbox">
+        <div class="pmain"><div class="plab">Precio · <span id="pzLab">segundo nivel</span></div><div class="pval num" id="pzPrice">USD 96,750</div></div>
+        <div class="psub">
+          <div><div class="plab">Mantenimiento</div><b>US$100/mes</b></div>
+          <div><div class="plab">Entrega</div><b>Inmediata</b></div>
+        </div>
+        <a class="mapbtn" href="https://www.google.com/maps/search/?api=1&amp;query=Palma%20del%20Este%20IV%20Punta%20Cana&amp;query_place_id=ChIJZ8YiNwCTqI4R0AZZXl_gmfs" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Ver ubicación en Google Maps</a>
+        <p class="aside-note">La forma de pago se define según si utiliza fondos propios o financiamiento bancario. Yo lo acompaño en todo el proceso.</p>
+      </aside>
+    </div>
+
+    <div class="wrap levels">
+      <figure><img id="pzImg" src="img/palma-nivel2.jpg" alt="Interior del segundo nivel con salida al balcón" loading="lazy"><figcaption id="pzCap">Segundo nivel: sala con salida al balcón.</figcaption></figure>
+      <div>
+        <h3 class="rule">Elija el nivel</h3>
+        <p class="lead" style="margin-bottom:16px">El mismo apartamento de 2 habitaciones y 72 m², con dos maneras de disfrutar el exterior.</p>
+        <div class="seg" id="pzSeg">
+          <input type="radio" name="pz" id="pz-2" value="n2" checked><label for="pz-2"><b>Segundo nivel</b><span>Con balcón</span><span class="num">USD 96,750</span></label>
+          <input type="radio" name="pz" id="pz-3" value="n3"><label for="pz-3"><b>Tercer nivel</b><span>Terraza privada de 45 m²</span><span class="num">USD 114,900</span></label>
+        </div>
+        <ul class="lvdet" id="pzDet"></ul>
+      </div>
+    </div>
+
+    <div class="wrap apt">
+      <figure class="plano dark"><img src="img/palma-plano.jpg" alt="Plano tipo de los apartamentos de 72 m²" loading="lazy"></figure>
+      <div>
+        <p class="kick">Tu apartamento · 72 m²</p>
+        <ul class="spaces">
+          <li>2 habitaciones con closets</li><li>2 baños completos</li><li>Cocina con tope de granito</li><li>Sala y comedor con balcón</li><li>Área de lavado independiente</li><li>1 parqueo incluido</li>
+        </ul>
+        <p class="cap">Plano tipo · 72 m². Imagen ilustrativa.</p>
+      </div>
+    </div>
+
+    <div class="wrap gal">
+      <div class="strip">
+        <figure><img src="img/palma-sala.jpg" alt="Sala con salida al balcón" loading="lazy"><span class="chip">Sala y balcón</span></figure>
+        <figure><img src="img/palma-cocina.jpg" alt="Cocina con tope de granito" loading="lazy"><span class="chip">Cocina</span></figure>
+        <figure><img src="img/palma-hab.jpg" alt="Habitación con closet de madera" loading="lazy"><span class="chip">Habitación</span></figure>
+        <figure><img src="img/palma-bano.jpg" alt="Baño con cerámica importada" loading="lazy"><span class="chip">Baño</span></figure>
+        <figure><img src="img/palma-piscina.jpg" alt="Piscina del residencial" loading="lazy"><span class="chip">Piscinas</span></figure>
+        <figure><img src="img/palma-gimnasio.jpg" alt="Gimnasio" loading="lazy"><span class="chip">Gimnasio</span></figure>
+        <figure><img src="img/palma-infantil.jpg" alt="Área infantil" loading="lazy"><span class="chip">Área infantil</span></figure>
+        <figure><img src="img/palma-residencial.jpg" alt="Vista del residencial" loading="lazy"><span class="chip">Residencial</span></figure>
+      </div>
+      <div class="galnav"><small>Unidades terminadas y áreas comunes en uso</small><div><button type="button" data-dir="-1" aria-label="Foto anterior">&#8592;</button><button type="button" data-dir="1" aria-label="Foto siguiente">&#8594;</button></div></div>
+    </div>
+
+    <div class="wrap">
+      <div class="turnkey">
+        <div>
+          <p class="kick" style="color:#9fd3c9">Servicio llave en mano</p>
+          <h4>Recíbalo listo para disfrutar o rentar</h4>
+          <p style="margin:0;color:#d4e6e2;font-size:15px">Si prefiere recibir su apartamento amueblado, el desarrollador ofrece un servicio completo para dejarlo funcional y atractivo, pensado para disfrutarlo y aprovechar su potencial de renta.</p>
+          <ol><li>Concepto y diseño</li><li>Presupuesto</li><li>Amueblamiento</li><li>Supervisión</li></ol>
+        </div>
+        <img src="img/palma-llave.jpg" alt="Sala amueblada, imagen ilustrativa del servicio llave en mano" loading="lazy">
+      </div>
+    </div>
+  </section>
+  <section class="band place">
+    <div class="wrap">
+      <p class="kick">Residencial Pueblo Bávaro</p>
+      <h3 class="rule">Bien ubicado, playa a 16 minutos</h3>
+      <div class="pgrid">
+        <div>
+          <ul class="amen">
+            <li><svg class="ic"><use href="#i-check"/></svg>Piscina de adultos y de niños</li>
+            <li><svg class="ic"><use href="#i-check"/></svg>Gimnasio</li>
+            <li><svg class="ic"><use href="#i-check"/></svg>Dos áreas de niños</li>
+            <li><svg class="ic"><use href="#i-check"/></svg>Media cancha de baloncesto</li>
+            <li><svg class="ic"><use href="#i-check"/></svg>Pista de caminatas</li>
+            <li><svg class="ic"><use href="#i-check"/></svg>Parqueo de visitas</li>
+            <li><svg class="ic"><use href="#i-check"/></svg>Garita de seguridad con control de acceso</li>
+          </ul>
+        </div>
+        <div>
+          <ul class="dist">
+            <li><b>11<small>min</small></b><span>Downtown Mall</span></li>
+            <li><b>16<small>min</small></b><span>Pearl Beach Club</span></li>
+            <li><b>20<small>min</small></b><span>Aeropuerto Internacional de Punta Cana</span></li>
+          </ul>
+          <div class="near"><span>Plaza comercial Pueblo Bávaro · 2 min</span><span>Coco Bongo · 10 min</span><span>Adventure Park · 10 min</span><span>Playa Bibijagua · 19 min</span></div>
+          <a class="mapbtn" href="https://www.google.com/maps/search/?api=1&amp;query=Palma%20del%20Este%20IV%20Punta%20Cana&amp;query_place_id=ChIJZ8YiNwCTqI4R0AZZXl_gmfs" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Abrir en Google Maps</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</article>
+
+<!-- ================= OPCIÓN 3 · CORALES ================= -->
+<article id="corales">
+  <div class="ohero">
+    <img src="img/corales-hero.jpg" alt="Piscina principal de Corales de Palmaré" loading="lazy">
+    <span class="otag">Opción 3 · En plano</span>
+    <div class="obox"><h2>Corales de Palmaré</h2><div class="loc">PUNTA CANA</div><div class="by">Primera etapa · Entrega junio 2027</div></div>
+  </div>
+  <section class="band">
+    <div class="wrap intro">
+      <div>
+        <p class="kick">Apartamentos de 3 habitaciones</p>
+        <h3 class="rule">Tranquilidad con todo cerca</h3>
+        <p class="lead">Residencial de edificios de 3 niveles con ascensor, en una de las zonas de mayor crecimiento de Punta Cana. El proyecto se desarrolla bajo fideicomiso con Fiduciaria Popular (Grupo Popular), lo que da respaldo legal a su inversión.</p>
+        <div class="facts">
+          <div><svg class="ic"><use href="#i-lift"/></svg><b>Con ascensor</b><span>Edificios de 3 niveles</span></div>
+          <div><svg class="ic"><use href="#i-shield"/></svg><b>Fideicomiso</b><span>Fiduciaria Popular</span></div>
+          <div><svg class="ic"><use href="#i-level"/></svg><b>+30 años</b><span>De experiencia del desarrollador</span></div>
+          <div><svg class="ic"><use href="#i-cal"/></svg><b>Junio 2027</b><span>Entrega de la primera etapa</span></div>
+        </div>
+        <div class="honest">Los apartamentos de 2 habitaciones de este proyecto ya se vendieron. La opción disponible es de <b>3 habitaciones y 95 m²</b>: más espacio cuando venga con su familia y más capacidad al ponerlo en renta.</div>
+      </div>
+      <aside class="pbox">
+        <div class="pmain"><div class="plab">Precio</div><div class="pval num">Desde USD 114,999</div></div>
+        <div class="psub">
+          <div><div class="plab">Superficie</div><b>95 m²</b></div>
+          <div><div class="plab">Mantenimiento</div><b>US$143/mes</b></div>
+        </div>
+        <a class="mapbtn" href="https://www.google.com/maps/search/?api=1&amp;query=Corales%20de%20Palmar%C3%A9%20Village%20Punta%20Cana&amp;query_place_id=ChIJG96BF3vrqI4RSsIa9NObd-w" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Ver ubicación en Google Maps</a>
+        <p class="aside-note">De los apartamentos disponibles en la Etapa 1, solo queda uno con vista a la piscina: la unidad D1 del edificio 2, en primer nivel.</p>
+      </aside>
+    </div>
+    <div class="wrap calcwrap">
+      <h3 class="rule">Su plan de pago</h3>
+      <p class="lead">Calculado con la reserva hoy y el inicial en diciembre. Elija el nivel y, si quiere ver otro escenario, ajuste las fechas o los montos en vivo.</p>
+      <div class="calc" data-calc="corales"></div>
+    </div>
+    <div class="wrap apt">
+      <figure class="plano dark"><img src="img/corales-plano.jpg" alt="Plano de referencia del apartamento de 95 m²" loading="lazy"></figure>
+      <div>
+        <p class="kick">Tu apartamento · 95 m²</p>
+        <ul class="spaces">
+          <li>3 habitaciones</li><li>Principal con baño y walk-in closet</li><li>2 baños completos</li><li>Cocina con desayunador</li><li>Sala y comedor</li><li>Balcón y área de lavado</li><li>Closet de ropa blanca</li><li>2 parqueos incluidos</li>
+        </ul>
+        <div class="term"><b>Terminaciones:</b> cocina modular hidrófuga con tope de granito, pisos en porcelanato, puertas y closets en MDF, cerámicas importadas en los baños y gas común.</div>
+        <p class="cap">Plano de referencia · 95 m². Mantenimiento aproximado de US$1.5 por m²: limpieza y mantenimiento de áreas comunes, recogida de basura y seguridad.</p>
+      </div>
+    </div>
+    <div class="wrap gal">
+      <div class="strip">
+        <figure><img src="img/corales-sala.jpg" alt="Sala" loading="lazy"><span class="chip">Sala</span></figure>
+        <figure><img src="img/corales-cocina.jpg" alt="Cocina con desayunador" loading="lazy"><span class="chip">Cocina con desayunador</span></figure>
+        <figure><img src="img/corales-hab.jpg" alt="Habitación principal" loading="lazy"><span class="chip">Habitación principal</span></figure>
+        <figure><img src="img/corales-bano.jpg" alt="Baño" loading="lazy"><span class="chip">Baño</span></figure>
+        <figure><img src="img/corales-social.jpg" alt="Área social" loading="lazy"><span class="chip">Área social</span></figure>
+        <figure><img src="img/corales-padel.jpg" alt="Cancha de pádel" loading="lazy"><span class="chip">Pádel</span></figure>
+        <figure><img src="img/corales-gimnasio.jpg" alt="Gimnasio climatizado" loading="lazy"><span class="chip">Gimnasio</span></figure>
+        <figure><img src="img/corales-putting.jpg" alt="Putting green" loading="lazy"><span class="chip">Putting green</span></figure>
+        <figure><img src="img/corales-portico.jpg" alt="Pórtico de entrada" loading="lazy"><span class="chip">Pórtico de entrada</span></figure>
+      </div>
+      <div class="galnav"><small>Renders e imágenes de referencia del desarrollador</small><div><button type="button" data-dir="-1" aria-label="Foto anterior">&#8592;</button><button type="button" data-dir="1" aria-label="Foto siguiente">&#8594;</button></div></div>
+    </div>
+  </section>
+  <section class="band place">
+    <div class="wrap">
+      <p class="kick">El entorno</p>
+      <h3 class="rule">Cerca de todo, playa a 15 minutos</h3>
+      <div class="pgrid">
+        <div>
+          <ul class="amen">
+            <li><svg class="ic"><use href="#i-check"/></svg>Varias piscinas</li>
+            <li><svg class="ic"><use href="#i-check"/></svg>Cancha de pádel</li>
+            <li><svg class="ic"><use href="#i-check"/></svg>Terraza techada</li>
+            <li><svg class="ic"><use href="#i-check"/></svg>Putting green de 3 hoyos</li>
+            <li><svg class="ic"><use href="#i-check"/></svg>Área infantil</li>
+            <li><svg class="ic"><use href="#i-check"/></svg>Gimnasio climatizado</li>
+            <li><svg class="ic"><use href="#i-check"/></svg>Ascensor en todos los edificios</li>
+          </ul>
+        </div>
+        <div>
+          <ul class="dist">
+            <li><b>10<small>min</small></b><span>Downtown Punta Cana</span></li>
+            <li><b>15<small>min</small></b><span>Playa Bibijagua</span></li>
+            <li><b>20<small>min</small></b><span>Aeropuerto Internacional de Punta Cana</span></li>
+          </ul>
+          <div class="near"><span>Restaurante Jellyfish · 15 min</span><span>Pearl Beach Club · 16 min</span><span>Playa Cortecito · 20 min</span><span>Playa Blanca · 20 min</span></div>
+          <a class="mapbtn" href="https://www.google.com/maps/search/?api=1&amp;query=Corales%20de%20Palmar%C3%A9%20Village%20Punta%20Cana&amp;query_place_id=ChIJG96BF3vrqI4RSsIa9NObd-w" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Abrir en Google Maps</a>
+        </div>
+      </div>
+      <div class="pair wide">
+        <figure><img src="img/corales-piscina.jpg" alt="Vista aérea de la piscina principal" loading="lazy"><figcaption>Piscina principal</figcaption></figure>
+        <figure><img src="img/corales-aerea.jpg" alt="Vista aérea de la piscina y el área infantil" loading="lazy"><figcaption>Piscina y área infantil. Renders del desarrollador con fines ilustrativos.</figcaption></figure>
+      </div>
+    </div>
+  </section>
+</article>
+
+<!-- ================= ADICIONAL · EDEN SUITES ================= -->
+<article id="eden">
+  <div class="ohero">
+    <img src="img/eden-hero.jpg" alt="Piscina y gazebo de Eden Suites" loading="lazy">
+    <span class="otag" style="background:var(--gold);color:#fff">Opción adicional · Para inversión</span>
+    <div class="obox"><h2>Eden Suites</h2><div class="loc">EL CORTECITO</div><div class="by">En plano · Entrega octubre 2028</div></div>
+  </div>
+  <section class="band">
+    <div class="wrap intro">
+      <div>
+        <p class="kick">Apartamentos de 1 habitación · Bávaro</p>
+        <h3 class="rule">A 5 minutos caminando de la playa</h3>
+        <p class="lead">El Cortecito es una de las zonas más rentables de Punta Cana para alquilar: quien se hospeda aquí llega caminando a la playa, a los restaurantes y a los bares. Y está a 7 minutos de Downtown Punta Cana.</p>
+        <div class="honest">No estaba en el correo que le envié: es de <b>1 habitación</b> y se entrega en <b>octubre 2028</b>, así que se aparta de lo que me pidió. Se la muestro porque, pensando en la inversión, en esta ubicación pesa más la cercanía a la playa que el tamaño, y el pago se reparte en más meses.</div>
+      </div>
+      <aside class="pbox">
+        <div class="pmain"><div class="plab">Precio</div><div class="pval num">Desde USD 124,950</div></div>
+        <div class="psub">
+          <div><div class="plab">Superficie</div><b>65 m²</b></div>
+          <div><div class="plab">Entrega</div><b>Oct 2028</b></div>
+        </div>
+        <a class="mapbtn" href="https://www.google.com/maps/search/?api=1&amp;query=Eden%20Suites%20El%20Cortecito&amp;query_place_id=ChIJae5bEQDtqI4ROl_bCbQmipg" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Ver ubicación en Google Maps</a>
+      </aside>
+    </div>
+    <div class="wrap calcwrap">
+      <h3 class="rule">El plan de pago</h3>
+      <p class="lead">Calculado con la reserva hoy y el 15% a la firma, a los 30 días. Elija el apartamento y ajuste en vivo lo que quiera revisar.</p>
+      <div class="calc" data-calc="eden"></div>
+    </div>
+    <div class="wrap apt">
+      <figure class="plano"><img id="edenPlano" src="img/eden-plano-1h-balcon.jpg" alt="Plano del apartamento de 1 habitación con balcón" loading="lazy"></figure>
+      <div>
+        <p class="kick" id="edenKick">Tu apartamento · 65 m²</p>
+        <p style="margin:0" id="edenLead"></p>
+        <ul class="spaces" id="edenSpaces"></ul>
+        <div class="term">Cocina con tope y backsplash en <b>verde ubatuba</b>, baños en porcelanato y el dormitorio con salida directa al balcón o al patio.</div>
+        <figure style="margin-top:16px"><img src="img/eden-interior.jpg" alt="Sala, comedor y cocina" loading="lazy" style="border-radius:10px;width:100%"><figcaption class="cap">Sala, comedor y cocina. Imagen ilustrativa.</figcaption></figure>
+      </div>
+    </div>
+  </section>
+  <section class="band place">
+    <div class="wrap">
+      <p class="kick">El Cortecito · Bávaro</p>
+      <h3 class="rule">La playa, caminando</h3>
+      <div class="pgrid">
+        <div>
+          <ul class="amen">
+            <li><svg class="ic"><use href="#i-check"/></svg>2 piscinas con asoleaderos</li>
+            <li><svg class="ic"><use href="#i-check"/></svg>Gazebo con doble lounge</li>
+            <li><svg class="ic"><use href="#i-check"/></svg>Bar y área de BBQ</li>
+            <li><svg class="ic"><use href="#i-check"/></svg>Gimnasio</li>
+            <li><svg class="ic"><use href="#i-check"/></svg>Lobby con recepción</li>
+            <li><svg class="ic"><use href="#i-check"/></svg>Gran área verde central</li>
+            <li><svg class="ic"><use href="#i-check"/></svg>Ascensor en cada bloque</li>
+          </ul>
+        </div>
+        <div>
+          <ul class="dist">
+            <li><b>5<small>min</small></b><span>Caminando a la playa</span></li>
+            <li><b>7<small>min</small></b><span>Downtown Punta Cana</span></li>
+            <li><b>10<small>min</small></b><span>Hospital IMG</span></li>
+            <li><b>25<small>min</small></b><span>Aeropuerto Internacional de Punta Cana</span></li>
+          </ul>
+          <a class="mapbtn" href="https://www.google.com/maps/search/?api=1&amp;query=Eden%20Suites%20El%20Cortecito&amp;query_place_id=ChIJae5bEQDtqI4ROl_bCbQmipg" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Abrir en Google Maps</a>
+        </div>
+      </div>
+      <div class="gal">
+        <div class="strip">
+          <figure><img src="img/eden-fachada.jpg" alt="Edificios de Eden Suites entre palmeras" loading="lazy"><span class="chip">Fachada</span></figure>
+          <figure><img src="img/eden-gazebo.jpg" alt="Gazebo y piscinas vistos desde arriba" loading="lazy"><span class="chip">Gazebo y piscinas</span></figure>
+          <figure><img src="img/eden-lobby.jpg" alt="Lobby con recepción" loading="lazy"><span class="chip">Lobby</span></figure>
+          <figure><img src="img/eden-gimnasio.jpg" alt="Gimnasio" loading="lazy"><span class="chip">Gimnasio</span></figure>
+        </div>
+        <div class="galnav"><small style="color:#bfe1da">Imágenes ilustrativas del desarrollador</small><div><button type="button" data-dir="-1" aria-label="Foto anterior">&#8592;</button><button type="button" data-dir="1" aria-label="Foto siguiente">&#8594;</button></div></div>
+      </div>
+    </div>
+  </section>
+</article>
+
+<!-- ================= COMPARACIÓN ================= -->
+<section class="band" id="comparar">
+  <div class="wrap">
+    <h2 class="rule">Las opciones, lado a lado</h2>
+    <p class="lead">Lo esencial de cada una para decidir con calma.</p>
+    <div class="tblwrap">
+      <table class="cmp">
+        <thead><tr><th></th>
+          <th><small>Opción 1</small>Serena Village</th>
+          <th><small>Opción 2</small>Palma del Este IV</th>
+          <th><small>Opción 3</small>Corales de Palmaré</th>
+          <th><small>Adicional</small>Eden Suites</th></tr></thead>
+        <tbody>
+          <tr><th>Estado</th><td>Lista y amueblada</td><td>Lista, con título</td><td>En plano</td><td>En plano</td></tr>
+          <tr><th>Entrega</th><td>Inmediata</td><td>Inmediata</td><td>Junio 2027</td><td class="x">Octubre 2028</td></tr>
+          <tr><th>Distribución</th><td>2 hab · 2 baños</td><td>2 hab · 2 baños<br><small>3 baños con terraza</small></td><td>3 hab · 2 baños</td><td class="x">1 hab · 1 baño</td></tr>
+          <tr><th>Área</th><td>78 m²</td><td>72 m²</td><td>95 m²</td><td>65 m²</td></tr>
+          <tr><th>Parqueos</th><td>1</td><td>1</td><td>2</td><td>—</td></tr>
+          <tr><th>Precio</th><td class="num"><b>USD 135,000</b></td><td class="num"><b>USD 96,750</b> a <b>114,900</b></td><td class="num"><b>USD 114,999</b> a <b>122,500</b></td><td class="num"><b>USD 124,950</b> a <b>134,400</b></td></tr>
+          <tr><th>USD por m²</th><td class="num">1,731</td><td class="num">1,344 a 1,596</td><td class="num">1,211 a 1,289</td><td class="num">1,922 a 2,068</td></tr>
+          <tr><th>Forma de pago</th><td>Fondos propios o financiamiento</td><td>Fondos propios o financiamiento</td><td>10% inicial · 20% en cuotas · 70% contra entrega</td><td>15% a la firma · 35% en cuotas · 50% contra entrega</td></tr>
+          <tr><th>A la playa</th><td>15–20 min</td><td>16 min</td><td>15 min</td><td>5 min caminando</td></tr>
+          <tr><th>Al Downtown</th><td>10 min</td><td>11 min</td><td>10 min</td><td>7 min</td></tr>
+          <tr><th>Al aeropuerto</th><td>12 min</td><td>20 min</td><td>20 min</td><td>25 min</td></tr>
+          <tr><th>Ubicación</th>
+            <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Serena%20Village%20Punta%20Cana&amp;query_place_id=ChIJi1AXZu-TqI4R3Qrdj_8FwQA" target="_blank" rel="noopener">Google Maps<svg class="ic" style="width:16px;height:16px"><use href="#i-out"/></svg></a></td>
+            <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Palma%20del%20Este%20IV%20Punta%20Cana&amp;query_place_id=ChIJZ8YiNwCTqI4R0AZZXl_gmfs" target="_blank" rel="noopener">Google Maps<svg class="ic" style="width:16px;height:16px"><use href="#i-out"/></svg></a></td>
+            <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Corales%20de%20Palmar%C3%A9%20Village%20Punta%20Cana&amp;query_place_id=ChIJG96BF3vrqI4RSsIa9NObd-w" target="_blank" rel="noopener">Google Maps<svg class="ic" style="width:16px;height:16px"><use href="#i-out"/></svg></a></td>
+            <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Eden%20Suites%20El%20Cortecito&amp;query_place_id=ChIJae5bEQDtqI4ROl_bCbQmipg" target="_blank" rel="noopener">Google Maps<svg class="ic" style="width:16px;height:16px"><use href="#i-out"/></svg></a></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="foot-note">USD por m² calculado sobre el área construida. Serena incluye el mobiliario; el tercer nivel de Palma del Este suma 45 m² de terraza que no entran en el cálculo.</p>
+
+    <h3 class="rule" style="margin-top:48px">Dónde está cada opción</h3>
+    <p class="lead">Toque un punto para abrir su ubicación exacta en Google Maps.</p>
+    <div id="map" role="region" aria-label="Mapa con la ubicación de las cuatro opciones"></div>
+  </div>
+</section>
+
+<section class="band" style="background:var(--sand)">
+  <div class="wrap next">
+    <div>
+      <h2 class="rule">El siguiente paso</h2>
+      <p class="lead" style="color:var(--ink)">Dígame cuál de las opciones le gustaría revisar más a fondo. Lo acompaño en todo el proceso, desde la reserva hasta la entrega, incluido el financiamiento si lo necesita.</p>
+    </div>
+    <div>
+      <a class="btn" id="wa" href="https://wa.me/18295126019" target="_blank" rel="noopener">Escribirme por WhatsApp</a>
+      <p class="contact">Macarena Peña · Asesora inmobiliaria, RE/MAX Ocean<br>WhatsApp <span class="num">+1 829 512 6019</span> · macarenapena@remaxocean.net</p>
+    </div>
+  </div>
+</section>
+
+<footer class="band">
+  <div class="wrap">
+    <p>Precios y disponibilidad actualizados a noviembre de 2026, sujetos a confirmación del desarrollador o del propietario. Los planes de pago son aproximados, en dólares, y se calculan con la reserva en la fecha indicada.</p>
+    <p>Corales de Palmaré: reserva de USD 1,000; 10% de inicial que incluye la reserva; 20% durante la construcción y 70% contra entrega en junio 2027, según el desarrollador. Mantenimiento aproximado de US$1.5 por m².</p>
+    <p>Eden Suites: reserva de USD 2,000; 15% a la firma del contrato a los 30 días de la reserva (incluye la reserva); 35% durante la construcción y 50% contra entrega en octubre 2028. La reserva no es reembolsable. Los cargos bancarios y de transferencia corren por cuenta del comprador, y el recibo se emite por el monto que llegue a la cuenta de la constructora.</p>
+    <p>Serena Village: fotos reales del apartamento; renders del proyecto con fines ilustrativos. Palma del Este IV: imágenes de la terraza y del servicio llave en mano con fines ilustrativos. Corales de Palmaré y Eden Suites: renders, planos e imágenes de referencia del desarrollador con fines ilustrativos.</p>
+  </div>
+</footer>
+
+<script>
+{
+const MES=['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
+const MES3=['ene','feb','mar','abr','may','jun','jul','ago','sep','oct','nov','dic'];
+const INI='EFMAMJJASOND'.split('');
+const fmt=n=>Math.round(n).toLocaleString('en-US');
+const usd=n=>(n<0?'−':'')+'USD '+fmt(Math.abs(n));
+const idx=(y,m)=>y*12+m;
+const ml=i=>MES[i%12]+' '+Math.floor(i/12);
+const ms=i=>MES3[i%12]+' '+Math.floor(i/12);
+const r2=x=>Math.round(x*100)/100;
+const pctTxt=x=>{const v=Math.round(x*1000)/10;return(Number.isInteger(v)?v:v.toFixed(1))+'%'};
+const pad=n=>String(n).padStart(2,'0');
+const todayISO=()=>{const d=new Date();return d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate())};
+const parseISO=s=>{const p=String(s||'').split('-').map(Number);if(p.length!==3||p.some(isNaN))return null;return new Date(p[0],p[1]-1,p[2])};
+const dayTxt=d=>d.getDate()+' de '+MES[d.getMonth()]+' '+d.getFullYear();
+const num=s=>{if(s==null)return null;const t=String(s).replace(/[^0-9.]/g,'');if(t===''||t==='.')return null;const v=Number(t);return isFinite(v)?v:null};
+const range=(a,b)=>a===b?ml(a):(Math.floor(a/12)===Math.floor(b/12)?MES[a%12]+' a '+ml(b):ml(a)+' a '+ml(b));
+
+/* ---------- live payment calculator ---------- */
+const CFG={
+  corales:{
+    units:[
+      {id:'n1',name:'Primer nivel',sub:'3 hab · 95 m²',price:114999},
+      {id:'n2',name:'Segundo nivel',sub:'3 hab · 95 m²',price:122500}
+    ],
+    res:1000,pIni:.10,pEnd:.70,key:[2027,5],keyTxt:'junio 2027'
+  },
+  eden:{
+    units:[
+      {id:'a',name:'2do o 3er nivel',sub:'Sin vista a la piscina',price:124950,plano:'balcon'},
+      {id:'b',name:'1er nivel con patio',sub:'Vista trasera y a jardín',price:128100,plano:'patio'},
+      {id:'c',name:'2do o 3er nivel',sub:'Orientada a la piscina',price:131250,plano:'balcon'},
+      {id:'d',name:'1er nivel con patio',sub:'Orientada a la piscina',price:134400,plano:'patio'}
+    ],
+    res:2000,pIni:.15,pEnd:.50,key:[2028,9],keyTxt:'octubre 2028',
+    onUnit:u=>{
+      const p=document.getElementById('edenPlano');
+      const patio=u.plano==='patio';
+      p.src='img/eden-plano-1h-'+u.plano+'.jpg';
+      p.alt='Plano del apartamento de 1 habitación con '+(patio?'patio':'balcón');
+      document.getElementById('edenLead').textContent=patio
+        ?'1 habitación y 1 baño, 65 m² de construcción, con balcón y 24 m² de patio privado.'
+        :'1 habitación y 1 baño, 65 m² de construcción, con balcón privado.';
+      document.getElementById('edenSpaces').innerHTML=(patio
+        ?['Sala','Cocina abierta con comedor','Dormitorio con closet','Baño','Área de lavado','Balcón','Patio privado de 24 m²']
+        :['Sala','Cocina abierta con comedor','Dormitorio con closet','Baño','Balcón privado']).map(s=>`<li>${s}</li>`).join('');
+    }
+  }
+};
+
+function Calc(root,id){
+  const cfg=CFG[id];
+  const D=u=>({u:u||cfg.units[0].id,price:null,resDate:todayISO(),resAmt:cfg.res,iniMonth:null,iniPct:cfg.pIni,firstMonth:null,cuotaFija:null,endPct:cfg.pEnd,locks:{}});
+  let s=D();
+  root.innerHTML=`
+  <div class="tool">
+    <div>
+      <fieldset><legend>Elija el apartamento</legend><div class="seg" data-units></div></fieldset>
+      <p class="deliv">Entrega: <b>${cfg.keyTxt}</b></p>
+      <div class="result" aria-live="polite"><small>Cuota mensual durante la construcción</small><div class="big num" data-big></div><small data-sub></small></div>
+      <ul class="rows" data-rows></ul>
+      <div class="warn" data-warn hidden></div>
+      <p class="note">El monto contra entrega se puede cubrir con financiamiento bancario. Yo lo acompaño en ese proceso y en todo el de compra.</p>
+    </div>
+    <div>
+      <details class="live" open>
+        <summary><span>Ajustar en vivo</span><small>Todo se recalcula al instante</small></summary>
+        <div class="fields">
+          <label data-f="resDate">Fecha de reserva<input type="date" data-k="resDate"></label>
+          <label data-f="resAmt">Monto de reserva<span class="inp usd"><input inputmode="numeric" autocomplete="off" data-k="resAmt"></span></label>
+          <label data-f="iniMonth">Mes del inicial<select data-k="iniMonth"></select></label>
+          <label data-f="iniPct">Inicial total (con reserva)<span class="inp pct"><input inputmode="decimal" autocomplete="off" data-k="iniPct"></span></label>
+          <label data-f="firstMonth">Primera cuota<select data-k="firstMonth"></select></label>
+          <label data-f="cuotaFija">Cuota mensual<span class="inp usd"><input inputmode="numeric" autocomplete="off" data-k="cuotaFija"></span></label>
+          <label data-f="endPct">Contra entrega<span class="inp pct"><input inputmode="decimal" autocomplete="off" data-k="endPct"></span></label>
+          <label data-f="price">Precio<span class="inp usd"><input inputmode="numeric" autocomplete="off" data-k="price"></span></label>
+        </div>
+        <div class="live-f"><button type="button" class="btn2" data-reset>Volver al plan estándar</button><small data-std></small></div>
+      </details>
+      <div class="cal">
+        <h4>Sus pagos, mes a mes</h4>
+        <p data-caltxt></p>
+        <div class="grid" data-grid></div>
+        <div class="legend">
+          <span><i style="background:var(--gold)"></i>Reserva</span>
+          <span><i style="background:var(--teal)"></i>Inicial</span>
+          <span><i style="background:var(--cuo)"></i>Cuota</span>
+          <span><i style="background:#fff;box-shadow:inset 0 0 0 3px var(--teal)"></i>Entrega</span>
+        </div>
+      </div>
+      <details class="detail">
+        <summary>Ver y ajustar pago por pago</summary>
+        <p class="hint" data-hint></p>
+        <div class="tablewrap"><table class="dt" data-dt></table></div>
+        <div class="live-f"><button type="button" class="btn2" data-unlock>Liberar cuotas ajustadas</button></div>
+      </details>
+    </div>
+  </div>`;
+  const $=sel=>root.querySelector(sel);
+  const F=k=>root.querySelector(`[data-k="${k}"]`);
+  const unitsEl=$('[data-units]');
+  unitsEl.innerHTML=cfg.units.map(x=>`<input type="radio" name="u-${id}" id="u-${id}-${x.id}" value="${x.id}"${s.u===x.id?' checked':''}><label for="u-${id}-${x.id}"><b>${x.name}</b><span>${x.sub}</span><span class="num">USD ${fmt(x.price)}</span></label>`).join('');
+  $('[data-std]').textContent=`Reserva hoy, USD ${fmt(cfg.res)}; inicial del ${Math.round(cfg.pIni*100)}% el mes siguiente.`;
+
+  function model(){
+    const u=cfg.units.find(x=>x.id===s.u);
+    const P=s.price!=null&&s.price>0?s.price:u.price;
+    const rd=parseISO(s.resDate)||parseISO(todayISO());
+    const r=idx(rd.getFullYear(),rd.getMonth());
+    const key=idx(cfg.key[0],cfg.key[1]);
+    const d30=new Date(rd);d30.setDate(d30.getDate()+30);
+    const iniAuto=idx(d30.getFullYear(),d30.getMonth());
+    let ini=s.iniMonth!=null?s.iniMonth:iniAuto;if(ini<r)ini=r;
+    const first=Math.max(s.firstMonth!=null?s.firstMonth:ini+1,r);
+    const last=key-1;
+    const months=[];for(let i=first;i<=last;i++)months.push(i);
+    const warn=[];
+    let iniTotal=Math.round(P*s.iniPct);
+    if(s.resAmt>iniTotal){warn.push('La reserva supera el inicial: se toma el inicial igual a la reserva.');iniTotal=s.resAmt}
+    const comp=iniTotal-s.resAmt;
+    let conPct=1-iniTotal/P-s.endPct;
+    if(conPct<-1e-9){warn.push('El inicial y el contra entrega suman más del 100%: no quedan cuotas por pagar.');conPct=0}
+    const conTarget=Math.max(0,Math.round(P*conPct));
+    const locks={};let L=0,k=0;
+    months.forEach(i=>{if(s.locks[i]!=null){locks[i]=s.locks[i];L+=s.locks[i]}else k++});
+    let auto=0;
+    if(s.cuotaFija!=null)auto=s.cuotaFija;
+    else if(k>0)auto=Math.max(0,Math.round((conTarget-L)/k));
+    const cuotas=months.map(i=>locks[i]!=null?locks[i]:auto);
+    const sumC=cuotas.reduce((a,b)=>a+b,0);
+    const end=P-iniTotal-sumC;
+    if(!months.length&&conTarget>0)warn.push('No quedan meses para cuotas antes de la entrega: ese monto pasa al contra entrega.');
+    if(ini>=key)warn.push('El inicial queda en el mes de entrega o después.');
+    if(r>=key)warn.push('La fecha de reserva es posterior a la entrega estimada.');
+    if(end<0)warn.push('Los pagos antes de la entrega superan el precio. Reduzca alguna cuota.');
+    if(s.cuotaFija!=null&&months.length&&Math.abs((sumC+iniTotal)-(P-Math.round(P*s.endPct)))>1){
+      const diff=(P-Math.round(P*s.endPct))-(sumC+iniTotal);
+      if(diff>0)warn.push(`Con esa cuota, ${usd(diff)} pasan al contra entrega.`);
+    }
+    return{u,P,rd,r,key,ini,first,last,months,cuotas,locks,iniTotal,comp,conTarget,sumC,end,auto,k,warn};
+  }
+
+  let dtKey='';
+  function render(){
+    const m=model();
+    const n=m.months.length;
+    const big=$('[data-big]'),sub=$('[data-sub]');
+    if(!n){big.textContent='Sin cuotas';sub.textContent='No hay meses de construcción en este escenario'}
+    else{
+      const allEq=m.cuotas.every(c=>c===m.cuotas[0]);
+      const nl=Object.keys(m.locks).length;
+      if(allEq){big.innerHTML=usd(m.cuotas[0])+' <em>al mes</em>';sub.textContent=n===1?`1 cuota, en ${ml(m.months[0])}`:`${n} cuotas, de ${ml(m.months[0])} a ${ml(m.months[n-1])}`}
+      else{big.innerHTML=(m.k>0?usd(m.auto):'Variable')+(m.k>0?' <em>al mes</em>':'');sub.textContent=`${n} cuotas de ${ml(m.months[0])} a ${ml(m.months[n-1])} · ${nl} ajustada${nl===1?'':'s'} a mano`}
+    }
+    const rows=[
+      ['background:var(--gold)','Reserva',dayTxt(m.rd),usd(s.resAmt),''],
+      ['background:var(--teal)','Completivo del inicial',ml(m.ini),usd(m.comp),`inicial ${usd(m.iniTotal)} · ${pctTxt(m.iniTotal/m.P)}`],
+      ['background:var(--cuo)','Cuotas de construcción',n?range(m.months[0],m.months[n-1]):'sin cuotas',usd(m.sumC),pctTxt(m.sumC/m.P)],
+      ['background:#fff;box-shadow:inset 0 0 0 3px var(--teal)','Contra entrega',ml(m.key),usd(m.end),pctTxt(m.end/m.P)]
+    ];
+    $('[data-rows]').innerHTML=rows.map(([c,t,w,a,pc])=>`<li><i style="${c}"></i><b>${t}</b><span class="amt num">${a}</span><span class="when">${w}</span><span class="pct">${pc}</span></li>`).join('')+`<li class="tot"><span></span><b>Precio total</b><span class="amt num">${usd(m.P)}</span></li>`;
+    const w=$('[data-warn]');w.hidden=!m.warn.length;w.innerHTML=m.warn.map(t=>`<p>${t}</p>`).join('');
+    $('[data-caltxt]').textContent=`${m.u.name}, ${m.u.sub.toLowerCase()}: ${usd(m.P)}. Entrega en ${cfg.keyTxt}.`;
+    // calendar
+    const y0=Math.floor(m.r/12),y1=Math.max(Math.floor(m.key/12),y0);
+    let g='<span></span>'+INI.map(l=>`<span class="m">${l}</span>`).join('');
+    const cm={};m.months.forEach((i,j)=>cm[i]=m.cuotas[j]);
+    for(let y=y0;y<=y1;y++){
+      g+=`<span class="y">${y}</span>`;
+      for(let mo=0;mo<12;mo++){
+        const i=idx(y,mo);const cls=['c'];let t=ms(i);
+        if(i===m.r){cls.push('res');t+=' · reserva '+usd(s.resAmt)}
+        if(i===m.ini){cls.push('ini');t+=' · inicial '+usd(m.comp)}
+        if(cm[i]!=null){cls.push(cm[i]>0?'cuo':'zero');if(m.locks[i]!=null)cls.push('lk');t+=' · cuota '+usd(cm[i])}
+        if(i===m.key){cls.push('key');t+=' · contra entrega '+usd(m.end)}
+        if(cls.length===1)cls.push('off');
+        g+=`<span class="${cls.join(' ')}" title="${t}"></span>`;
+      }
+    }
+    $('[data-grid]').innerHTML=g;
+    // detail table
+    const conPctTxt=pctTxt(m.conTarget/m.P);
+    $('[data-hint]').textContent=`Cambie cualquier cuota y las demás se reparten solas para completar el ${conPctTxt} de construcción. Borre el monto para liberarla.`;
+    const sk=[m.r,m.ini,m.months.join(','),m.key].join('|');
+    const dt=$('[data-dt]');
+    if(sk!==dtKey){
+      dtKey=sk;
+      let h='<thead><tr><th>Mes</th><th>Concepto</th><th>Monto</th></tr></thead><tbody>';
+      h+=`<tr><td>${ms(m.r)}</td><td>Reserva</td><td class="num" data-v="res"></td></tr>`;
+      h+=`<tr><td>${ms(m.ini)}</td><td>Completivo del inicial</td><td><input inputmode="numeric" data-comp aria-label="Completivo del inicial"></td></tr>`;
+      m.months.forEach((i,j)=>{h+=`<tr><td>${ms(i)}</td><td>Cuota ${j+1}</td><td><input inputmode="numeric" data-mi="${i}" aria-label="Cuota de ${ml(i)}"></td></tr>`});
+      h+=`<tr><td>${ms(m.key)}</td><td>Contra entrega</td><td class="num" data-v="end"></td></tr></tbody><tfoot><tr><td colspan="2">Total</td><td class="num" data-v="tot"></td></tr></tfoot>`;
+      dt.innerHTML=h;
+    }
+    const ae=document.activeElement;
+    dt.querySelector('[data-v="res"]').textContent=usd(s.resAmt);
+    dt.querySelector('[data-v="end"]').textContent=usd(m.end);
+    dt.querySelector('[data-v="tot"]').textContent=usd(m.P);
+    const ci=dt.querySelector('[data-comp]');if(ci!==ae)ci.value=fmt(m.comp);
+    dt.querySelectorAll('[data-mi]').forEach(inp=>{
+      const i=+inp.dataset.mi;const j=m.months.indexOf(i);
+      inp.classList.toggle('lk',m.locks[i]!=null);
+      if(inp!==ae&&j>=0)inp.value=fmt(m.cuotas[j]);
+    });
+    $('[data-unlock]').hidden=!Object.keys(s.locks).length;
+    // fields
+    const setV=(k,v)=>{const el=F(k);if(el!==ae)el.value=v};
+    setV('resDate',s.resDate);
+    setV('resAmt',fmt(s.resAmt));
+    setV('iniPct',String(r2(m.iniTotal/m.P*100)));
+    setV('endPct',String(r2(s.endPct*100)));
+    setV('price',fmt(m.P));
+    const cf=F('cuotaFija');cf.placeholder=n?'Auto: '+fmt(m.k?m.auto:0):'Sin cuotas';if(cf!==ae)cf.value=s.cuotaFija!=null?fmt(s.cuotaFija):'';
+    const opts=(a,b,sel,autoLbl)=>{let o=autoLbl?`<option value="auto">${autoLbl}</option>`:'';for(let i=a;i<=b;i++)o+=`<option value="${i}"${i===sel?' selected':''}>${ms(i)}</option>`;return o};
+    const im=F('iniMonth');const imH=opts(m.r,Math.max(m.r,m.key-1),m.ini);if(im.dataset.h!==imH){im.innerHTML=imH;im.dataset.h=imH}im.value=String(m.ini);
+    const fm=F('firstMonth');const fmH=opts(m.r,Math.max(m.r,m.key-1),s.firstMonth,`Auto (${ms(m.ini+1)})`);if(fm.dataset.h!==fmH){fm.innerHTML=fmH;fm.dataset.h=fmH}fm.value=s.firstMonth!=null?String(s.firstMonth):'auto';
+    // modified flags
+    const mod={resDate:s.resDate!==todayISO(),resAmt:s.resAmt!==cfg.res,iniMonth:s.iniMonth!=null,iniPct:Math.abs(s.iniPct-cfg.pIni)>1e-9,firstMonth:s.firstMonth!=null,cuotaFija:s.cuotaFija!=null,endPct:Math.abs(s.endPct-cfg.pEnd)>1e-9,price:s.price!=null};
+    let any=Object.keys(s.locks).length>0;
+    for(const k in mod){root.querySelector(`[data-f="${k}"]`).classList.toggle('mod',mod[k]);if(mod[k])any=true}
+    $('[data-reset]').classList.toggle('hot',any);
+    if(cfg.onUnit)cfg.onUnit(m.u);
+  }
+
+  unitsEl.addEventListener('change',e=>{s.u=e.target.value;s.price=null;render()});
+  const on=(k,fn,ev='input')=>F(k).addEventListener(ev,e=>{fn(e.target.value);render()});
+  on('resDate',v=>{s.resDate=parseISO(v)?v:todayISO()},'change');
+  on('resAmt',v=>{const x=num(v);s.resAmt=x==null?cfg.res:x});
+  on('iniMonth',v=>{s.iniMonth=Number(v)},'change');
+  on('iniPct',v=>{const x=num(v);s.iniPct=x==null?cfg.pIni:Math.min(x,100)/100});
+  on('firstMonth',v=>{s.firstMonth=v==='auto'?null:Number(v)},'change');
+  on('cuotaFija',v=>{s.cuotaFija=num(v)});
+  on('endPct',v=>{const x=num(v);s.endPct=x==null?cfg.pEnd:Math.min(x,100)/100});
+  on('price',v=>{const x=num(v);s.price=x!=null&&x>=10000?x:null});
+  root.querySelectorAll('.fields input').forEach(el=>el.addEventListener('blur',()=>render()));
+  $('[data-dt]').addEventListener('input',e=>{
+    const t=e.target;const x=num(t.value);
+    if(t.hasAttribute('data-comp')){
+      const m=model();
+      s.iniPct=x==null?cfg.pIni:(s.resAmt+x)/m.P;
+    }else if(t.dataset.mi){
+      const i=+t.dataset.mi;
+      if(x==null)delete s.locks[i];else s.locks[i]=x;
+    }
+    render();
+  });
+  $('[data-dt]').addEventListener('focusout',()=>setTimeout(render,0));
+  $('[data-reset]').addEventListener('click',()=>{s=D(s.u);dtKey='';render()});
+  $('[data-unlock]').addEventListener('click',()=>{s.locks={};render()});
+  render();
+}
+document.querySelectorAll('[data-calc]').forEach(el=>Calc(el,el.dataset.calc));
+
+/* ---------- Palma del Este: level picker ---------- */
+const PZ={
+  n2:{lab:'segundo nivel',price:96750,img:'img/palma-nivel2.jpg',alt:'Interior del segundo nivel con salida al balcón',cap:'Segundo nivel: sala con salida al balcón.',
+      det:[['Exterior','Balcón'],['Área','72 m²'],['Distribución','2 hab · 2 baños'],['Parqueo','1 incluido']]},
+  n3:{lab:'tercer nivel',price:114900,img:'img/palma-terraza.jpg',alt:'Terraza privada en la azotea, imagen ilustrativa',cap:'Imagen ilustrativa: no incluye jacuzzi, pared divisoria ni mobiliario. La terraza está en el 4to nivel, con acceso por la escalera común y preinstalación de agua y gas.',
+      det:[['Exterior','Terraza privada de 45 m² con baño'],['Área','72 m² + 45 m² de terraza'],['Distribución','2 hab · 3 baños'],['Parqueo','1 incluido']]}
+};
+const pz=v=>{const p=PZ[v];
+  document.getElementById('pzLab').textContent=p.lab;
+  document.getElementById('pzPrice').textContent='USD '+fmt(p.price);
+  const im=document.getElementById('pzImg');im.src=p.img;im.alt=p.alt;
+  document.getElementById('pzCap').textContent=p.cap;
+  document.getElementById('pzDet').innerHTML=p.det.map(([a,b])=>`<li><span>${a}</span><b>${b}</b></li>`).join('')+`<li><span>Precio</span><b class="num">USD ${fmt(p.price)}</b></li>`;
+};
+document.getElementById('pzSeg').addEventListener('change',e=>pz(e.target.value));
+pz('n2');
+
+/* ---------- galleries ---------- */
+document.querySelectorAll('.gal').forEach(g=>{
+  const strip=g.querySelector('.strip');
+  const go=d=>{const f=strip.querySelector('figure');strip.scrollBy({left:d*(f.offsetWidth+12),behavior:'smooth'})};
+  g.querySelectorAll('.galnav button').forEach(b=>b.addEventListener('click',()=>go(+b.dataset.dir)));
+  strip.tabIndex=0;strip.setAttribute('aria-label','Galería de fotos');
+  strip.addEventListener('keydown',e=>{if(e.key==='ArrowRight')go(1);if(e.key==='ArrowLeft')go(-1)});
+});
+
+/* ---------- nav highlight ---------- */
+const links=[...document.querySelectorAll('.links a')];
+const secs=links.map(a=>document.querySelector(a.getAttribute('href')));
+const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){links.forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+e.target.id))}})},{rootMargin:'-45% 0px -50% 0px'});
+secs.forEach(s=>s&&io.observe(s));
+
+/* ---------- WhatsApp ---------- */
+document.getElementById('wa').href='https://wa.me/18295126019?text='+encodeURIComponent('Hola Macarena, revisé la propuesta de las opciones en Punta Cana y quisiera conversar sobre una de ellas.');
+}
+</script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+<script>
+(function(){
+  const el=document.getElementById('map');
+  if(!window.L){el.innerHTML='<p style="padding:20px">El mapa no cargó. Use los enlaces de Google Maps de la tabla.</p>';return}
+  const gm=(q,id)=>'https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(q)+'&query_place_id='+id;
+  const P=[
+    {t:'1',n:'Serena Village',ll:[18.6008774,-68.4138516],u:gm('Serena Village Punta Cana','ChIJi1AXZu-TqI4R3Qrdj_8FwQA'),d:'Lista y amueblada · USD 135,000',dir:'left'},
+    {t:'2',n:'Palma del Este IV',ll:[18.6141412,-68.4162532],u:gm('Palma del Este IV Punta Cana','ChIJZ8YiNwCTqI4R0AZZXl_gmfs'),d:'Lista con título · desde USD 96,750',dir:'left'},
+    {t:'3',n:'Corales de Palmaré',ll:[18.6540833,-68.4431667],u:gm('Corales de Palmaré Village Punta Cana','ChIJG96BF3vrqI4RSsIa9NObd-w'),d:'En plano · junio 2027 · desde USD 114,999',dir:'left'},
+    {t:'+',n:'Eden Suites',ll:[18.6864123,-68.4251381],u:gm('Eden Suites El Cortecito','ChIJae5bEQDtqI4ROl_bCbQmipg'),d:'En plano · octubre 2028 · desde USD 124,950',dir:'right',x:'extra'}
+  ];
+  const R=[
+    {t:'D',n:'Downtown Punta Cana',ll:[18.6361299,-68.3975234],u:gm('Downtown Punta Cana','ChIJZ_pHnzCTqI4R-hZh4ZqWqrk')},
+    {t:'PUJ',n:'Aeropuerto',ll:[18.5623134,-68.3676862],u:gm('Punta Cana International Airport','ChIJiY_kLBeSqI4RjA8X2iSmepU')}
+  ];
+  const map=L.map(el,{scrollWheelZoom:false});
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png',{maxZoom:19,subdomains:'abcd',attribution:'&copy; OpenStreetMap &copy; CARTO'}).addTo(map);
+  const pts=[];
+  P.forEach(p=>{
+    const m=L.marker(p.ll,{icon:L.divIcon({className:'',html:`<div class="pin ${p.x||''}"><span>${p.t}</span></div>`,iconSize:[34,34],iconAnchor:[17,34],popupAnchor:[0,-30]})}).addTo(map);
+    m.bindTooltip(p.n,{permanent:true,direction:p.dir,offset:p.dir==='left'?[-14,-18]:[14,-18],className:'tip'});
+    m.bindPopup(`<b>${p.n}</b><br>${p.d}<br><a href="${p.u}" target="_blank" rel="noopener">Abrir en Google Maps</a>`);
+    pts.push(p.ll);
+  });
+  R.forEach(p=>{
+    const m=L.marker(p.ll,{icon:L.divIcon({className:'',html:`<div class="pin ref"><span>${p.t}</span></div>`,iconSize:[26,26],iconAnchor:[13,26],popupAnchor:[0,-24]})}).addTo(map);
+    m.bindTooltip(p.n,{permanent:true,direction:'right',offset:[10,-14],className:'tip'});
+    m.bindPopup(`<b>${p.n}</b><br><a href="${p.u}" target="_blank" rel="noopener">Abrir en Google Maps</a>`);
+    pts.push(p.ll);
+  });
+  map.fitBounds(pts,{padding:[50,50]});
+})();
+</script>
+</body>
+</html>
